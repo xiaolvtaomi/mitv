@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:id="@+id/main_tabs_container"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="@drawable/main_bg"
+    >
+
+    <RelativeLayout
+        android:id="@+id/tabs_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- <com.xiaomi.mibox.gamecenternew.widgets.MiTabHost -->
+
+        <com.tv.ui.metro.view.TitleView
+            android:id="@+id/titleview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/titleview"
+            />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:scrollbars="none">
+
+            <com.tv.ui.metro.view.MiTabHost
+                android:id="@android:id/tabhost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                >
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/nav_bar_margin_top">
+
+                    <TabWidget
+                        android:id="@android:id/tabs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal"
+                        android:paddingTop="0dp"/>
+
+                    <FrameLayout
+                        android:id="@android:id/tabcontent"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="0"
+                        android:background="#00FF00"/>
+
+
+                </RelativeLayout>
+            </com.tv.ui.metro.view.MiTabHost>
+        </HorizontalScrollView>
+        <!-- menu stub -->
+        <ViewStub
+            android:id="@+id/new_home_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
+            android:layout="@layout/menu_panel"/>
+
+    </RelativeLayout>
+
+
+</FrameLayout>

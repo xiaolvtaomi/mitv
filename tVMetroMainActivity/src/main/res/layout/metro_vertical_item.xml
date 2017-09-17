@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/metro_item_view"
+    xmlns:attr="http://schemas.android.com/apk/res-auto"
+    xmlns:gif="http://schemas.android.com/tools"
+    android:layout_width="@dimen/ITEM_V_WIDTH"
+    android:layout_height="@dimen/ITEM_V_HEIGHT" >
+
+    <com.tv.ui.metro.view.CenterIconImage
+        android:id="@+id/back_ground_imageview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:enabled="true"
+        />
+
+    <com.tv.ui.metro.view.CenterIconImage
+        android:id="@+id/front_ground_imageview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+    <com.tv.ui.metro.view.CenterIconImage
+        android:id="@+id/sub_ground_imageview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:gravity="center" >
+
+        <com.tv.ui.metro.view.CenterIconImage
+            android:id="@+id/icon_imageview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/labelTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/icon_imageview"
+            android:layout_alignBottom="@id/icon_imageview"
+            android:paddingBottom="15dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="#ffffff"
+            android:textSize="25dp"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/handler_image_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/OPERATOR_MARGIN"
+        android:layout_marginRight="@dimen/OPERATOR_MARGIN"
+        android:src="@drawable/operator_handler"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/recommend_textview"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/metro_item_recommend_text_height"
+        android:layout_alignLeft="@id/back_ground_imageview"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/name_mask"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:padding="@dimen/metro_item_padding"
+        android:singleLine="true"
+        android:textColor="#ccffffff" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:id="@+id/notice_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:paddingTop="24dp"
+            android:textSize="17sp"
+            android:typeface="serif"
+            android:layout_gravity="center"
+            android:textColor="#4B4B4B"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/notice_textview_content"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="#4B4B4B"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textSize="15sp"
+            android:typeface="serif"
+            android:lineSpacingExtra="10dp"
+            android:visibility="gone"
+            android:maxLines="5"/>
+    </LinearLayout>
+    <com.tv.ui.metro.view.MyImageView
+        android:id="@+id/image_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        />
+    <com.tv.ui.metro.view.FlyBorderView
+        android:id="@+id/flyBorder_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/item_highlight1"
+        android:visibility="invisible"/>
+</merge>

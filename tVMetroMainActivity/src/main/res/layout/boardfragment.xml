@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:paddingLeft="0dp"
+             android:paddingRight="0dp"
+    >
+
+
+
+    <com.tv.ui.metro.view.BoardLayout
+        android:id="@+id/boardlayout"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/metro_offside"
+        android:paddingRight="@dimen/metro_offside"
+        android:paddingTop="@dimen/metro_offside_top"
+        android:paddingBottom="@dimen/metro_offside_bottom"
+        >
+
+    </com.tv.ui.metro.view.BoardLayout>
+
+</FrameLayout>
+
+

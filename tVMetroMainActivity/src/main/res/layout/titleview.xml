@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/home_title"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentRight="true"
+                android:paddingLeft="@dimen/metro_offside"
+                android:paddingRight="@dimen/metro_offside"
+                >
+
+
+
+    <ImageView
+        android:id="@+id/title_bar_network_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/network_state_on"
+        android:visibility="gone"/>
+
+
+
+    <TextView
+        android:id="@+id/title_bar_hour"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="--:--:--"
+        android:textColor="#ffffff"
+        android:layout_alignParentRight="true"
+        android:textSize="23sp"/>
+
+    <TextView
+        android:id="@+id/title_bar_date"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginRight="10dp"
+        android:gravity="center"
+        android:layout_toLeftOf="@+id/title_bar_hour"
+        android:text="0000-00-00"
+        android:textColor="#ffffff"
+        android:textSize="23sp"/>
+
+    <ImageView
+        android:id="@+id/title_bar_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:src="@drawable/logo"
+        android:layout_alignParentLeft="true"
+        android:visibility="gone"
+        />
+
+    <TextView
+        android:id="@+id/title_bar_title"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:gravity="center"
+        android:layout_toRightOf="@+id/title_bar_logo"
+        android:text="河南联通系统集成"
+        android:textColor="#ffffff"
+        android:textSize="23sp"
+        android:visibility="gone"/>
+
+</RelativeLayout>

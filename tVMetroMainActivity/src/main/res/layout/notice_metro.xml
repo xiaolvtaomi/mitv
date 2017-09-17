@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/metro_item_view"
+    android:layout_width="@dimen/ITEM_NORMAL_SIZE"
+    android:layout_height="@dimen/ITEM_NORMAL_SIZE">
+    <com.tv.ui.metro.view.CenterIconImage
+        android:id="@+id/back_ground_imageview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:scaleType="center" />
+
+    <com.tv.ui.metro.view.CenterIconImage
+        android:id="@+id/front_ground_imageview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+    <com.tv.ui.metro.view.CenterIconImage
+        android:id="@+id/sub_ground_imageview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <com.tv.ui.metro.view.CenterIconImage
+            android:id="@+id/icon_imageview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/labelTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/text_size_50"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/handler_image_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/OPERATOR_MARGIN"
+        android:layout_marginRight="@dimen/OPERATOR_MARGIN"
+        android:src="@drawable/operator_handler"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/recommend_textview"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/metro_item_recommend_text_height"
+        android:layout_alignLeft="@id/back_ground_imageview"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/name_mask"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:padding="@dimen/metro_item_padding"
+        android:singleLine="true"
+        android:textColor="#ccffffff" />
+    />
+    <TextView
+        android:id="@+id/notice_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_horizontal"
+        android:padding="@dimen/metro_item_padding"
+        android:singleLine="true"
+        android:textSize="45dp"
+        android:textColor="#ccffffff"
+        android:text="通知"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/notice_item">
+
+        <com.tv.ui.metro.view.VerticalMarqueeView
+            android:id="@+id/notice_textview_title"
+            android:layout_width="wrap_content"
+            android:layout_height="120dp"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="70dp"
+            android:layout_alignParentTop="true"
+            />
+        <TextView
+            android:id="@+id/notice_textview_creator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:layout_below="@+id/notice_textview_title"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="80dp"
+            android:textSize="40dp"
+            android:singleLine="true"
+            android:textColor="#ccffffff"
+            android:text="发布人"
+
+            />
+        <TextView
+            android:id="@+id/notice_textview_creator_createtime"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/notice_textview_creator"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="80dp"
+            android:textColor="#ccffffff"
+            android:textSize="40dp"
+            android:text="发布日期"/>
+    </RelativeLayout>
+
+
+
+</merge>

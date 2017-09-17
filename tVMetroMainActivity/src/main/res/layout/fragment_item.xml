@@ -1,0 +1,48 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.tv.ui.metro.galleryviewpager.ItemFragment" >
+
+    <com.tv.ui.metro.galleryviewpager.Imageview_content
+        android:id="@+id/iv_photo"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/main_bg"
+        />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="80dp"
+        android:textColor="#ffffff"
+        android:textSize="15sp"
+        android:layout_alignLeft="@+id/iv_photo"
+        android:layout_alignBottom="@+id/iv_photo"
+        android:layout_alignRight="@+id/iv_photo"
+        android:layout_marginLeft="20dp"
+        android:maxLines="3"
+        android:visibility="gone"/>
+     <ImageView
+         android:id="@+id/page_left"
+         android:layout_width="30dp"
+         android:layout_height="30dp"
+         android:layout_centerVertical="true"
+         android:layout_marginLeft="30dp"
+         android:src="@drawable/page_left"
+         android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/page_right"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerVertical="true"
+         android:layout_alignParentRight="true"
+        android:layout_marginRight="30dp"
+        android:src="@drawable/page_right"
+        android:visibility="gone"/>
+
+</RelativeLayout>

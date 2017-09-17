@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="D:\mitv\tVAppMainActivity\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\libs\internal_impl-22.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="D:\mitv\tVAppMainActivity\build\intermediates\pre-dexed\debug\internal_impl-22.2.0_9d38e718c35066b4f42eb4809ad553c6a5403cf0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\mitv\tVAppMainActivity\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="F:\mitv\tVAppMainActivity\build\intermediates\pre-dexed\release\com.android.support-support-v4-22.2.0_e3b0a655a8aef9dc950e8e7fce407c0fda840a1e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\mitv\tVAppMainActivity\build\intermediates\exploded-aar\mitv\tVMetroMainActivity\unspecified\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="88add6678fbb3bc96dd043eca9173e37160a1ef7">
+        <dex dex="D:\mitv\tVAppMainActivity\build\intermediates\pre-dexed\release\mitv-tVMetroMainActivity-unspecified_94c92a8feacbe5f6284d71cd708cc59ae78e45a5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Lenovo\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.0\support-annotations-22.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="D:\mitv\tVAppMainActivity\build\intermediates\pre-dexed\debug\support-annotations-22.2.0_6749b2d52f964beaf422f249e68dfe26bc943a08.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\studio\gradle\m2repository\com\google\code\gson\gson\2.2.4\gson-2.2.4.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="a60a5e993c98c864010053cb901b7eab25306568">
+        <dex dex="D:\mitv\tVAppMainActivity\build\intermediates\pre-dexed\debug\gson-2.2.4_6cc82b0a9ffe18796e623c580a41decc2e5b3f65.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\mitv\tVAppMainActivity\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="D:\mitv\tVAppMainActivity\build\intermediates\pre-dexed\debug\com.android.support-support-v4-22.2.0_4ecd295d97cbac7ff43218f9259a23851f89fe20.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\mitv\tVAppMainActivity\build\intermediates\exploded-aar\mitv\tVMetroMainActivity\unspecified\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="949819b30767f3b262399921964493d4e3966972">
+        <dex dex="F:\mitv\tVAppMainActivity\build\intermediates\pre-dexed\debug\mitv-tVMetroMainActivity-unspecified_f2a5de4dfb862f9a02fa309131e7f828baf46dc3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\mitv\tVAppMainActivity\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\libs\internal_impl-22.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="F:\mitv\tVAppMainActivity\build\intermediates\pre-dexed\release\internal_impl-22.2.0_6fc08a214bdf6ce25985ab0e50d4f975fb2c4d2c.jar" />
+    </item>
+
+</items>

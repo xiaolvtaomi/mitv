@@ -1,0 +1,151 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Manifest Merging:
+-----------------
+Your project uses libraries that provide manifests, and your Eclipse
+project did not explicitly turn on manifest merging. In Android Gradle
+projects, manifests are always merged (meaning that contents from your
+libraries' manifests will be merged into the app manifest. If you had
+manually copied contents from library manifests into your app manifest
+you may need to remove these for the app to build correctly.
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+From TVAppMainActivity:
+* ic_launcher-web.png
+* proguard-project.txt
+From TVMetroMainActivity:
+* TVMetroSample/
+* TVMetroSample/.settings/
+* TVMetroSample/.settings/org.eclipse.jdt.core.prefs
+* TVMetroSample/AndroidManifest.xml
+* TVMetroSample/ic_launcher-web.png
+* TVMetroSample/libs/
+* TVMetroSample/libs/android-support-v4.jar
+* TVMetroSample/proguard-project.txt
+* TVMetroSample/project.properties
+* TVMetroSample/res/
+* TVMetroSample/res/drawable-xhdpi/
+* TVMetroSample/res/drawable-xhdpi/ic_launcher.png
+* TVMetroSample/res/drawable-xhdpi/icon_appstore.png
+* TVMetroSample/res/drawable-xhdpi/icon_gamecenter.png
+* TVMetroSample/res/drawable-xxhdpi/
+* TVMetroSample/res/drawable-xxhdpi/ic_launcher.png
+* TVMetroSample/res/menu/
+* TVMetroSample/res/menu/main.xml
+* TVMetroSample/res/values-zh-rCN/
+* TVMetroSample/res/values-zh-rCN/strings.xml
+* TVMetroSample/res/values-zh-rTW/
+* TVMetroSample/res/values-zh-rTW/strings.xml
+* TVMetroSample/res/values/
+* TVMetroSample/res/values/dimens.xml
+* TVMetroSample/res/values/strings.xml
+* TVMetroSample/res/values/styles.xml
+* TVMetroSample/src/
+* TVMetroSample/src/com/
+* TVMetroSample/src/com/xiaomi/
+* TVMetroSample/src/com/xiaomi/mitv/
+* TVMetroSample/src/com/xiaomi/mitv/store/
+* TVMetroSample/src/com/xiaomi/mitv/store/ApplicationAlbumActivity.java
+* TVMetroSample/src/com/xiaomi/mitv/store/ApplicationDetailActivity.java
+* TVMetroSample/src/com/xiaomi/mitv/store/GameAlbumActivity.java
+* TVMetroSample/src/com/xiaomi/mitv/store/GameDetailActivity.java
+* TVMetroSample/src/com/xiaomi/mitv/store/VideoAlbumActivity.java
+* TVMetroSample/src/com/xiaomi/mitv/store/VideoDetailActivity.java
+* TVMetroSample/src/com/xiaomi/mitv/store/app/
+* TVMetroSample/src/com/xiaomi/mitv/store/app/AppMainActivity.java
+* TVMetroSample/src/com/xiaomi/mitv/store/bluetooth/
+* TVMetroSample/src/com/xiaomi/mitv/store/bluetooth/BluetoothReceiver.java
+* TVMetroSample/src/com/xiaomi/mitv/store/bluetooth/OnBluetoothHandlerListener.java
+* TVMetroSample/src/com/xiaomi/mitv/store/bluetooth/OnFindHanlderCallback.java
+* TVMetroSample/src/com/xiaomi/mitv/store/bluetooth/OnHandlerCheckResult.java
+* TVMetroSample/src/com/xiaomi/mitv/store/game/
+* TVMetroSample/src/com/xiaomi/mitv/store/game/Client.java
+* TVMetroSample/src/com/xiaomi/mitv/store/game/GameMainActivity.java
+* TVMetroSample/src/com/xiaomi/mitv/store/game/HandlerHelperActivity.java
+* TVMetroSample/src/com/xiaomi/mitv/store/game/IConfig.java
+* TVMetroSample/src/com/xiaomi/mitv/store/network/
+* TVMetroSample/src/com/xiaomi/mitv/store/network/AppTabsGsonLoader.java
+* TVMetroSample/src/com/xiaomi/mitv/store/network/CommonRequest.java
+* TVMetroSample/src/com/xiaomi/mitv/store/network/CommonUrl.java
+* TVMetroSample/src/com/xiaomi/mitv/store/network/CommonUrlBuilder.java
+* TVMetroSample/src/com/xiaomi/mitv/store/network/Constants.java
+* TVMetroSample/src/com/xiaomi/mitv/store/network/GameTabsGsonLoader.java
+* TVMetroSample/src/com/xiaomi/mitv/store/utils/
+* TVMetroSample/src/com/xiaomi/mitv/store/utils/MiTVBuild.java
+* TVMetroSample/src/com/xiaomi/mitv/store/utils/MiTVSystem.java
+* TVMetroSample/src/com/xiaomi/mitv/store/utils/Utils.java
+* TVMetroSample/src/com/xiaomi/mitv/store/view/
+* TVMetroSample/src/com/xiaomi/mitv/store/view/BluetoothView.java
+* TVMetroSample/src/com/xiaomi/mitv/store/view/TitleBar.java
+* TVMetroSample/src/com/xiaomi/mitv/store/view/UserView.java
+* TVMetroUI.iml
+* build.xml
+* out/
+* out/production/
+* out/production/TVMetroSample/
+* out/production/TVMetroSample/TVMetroSample.apk
+* proguard-project.txt
+* res.txt
+
+Replaced Jars with Dependencies:
+--------------------------------
+The importer recognized the following .jar files as third party
+libraries and replaced them with Gradle dependencies instead. This has
+the advantage that more explicit version information is known, and the
+libraries can be updated automatically. However, it is possible that
+the .jar file in your project was of an older version than the
+dependency we picked, which could render the project not compileable.
+You can disable the jar replacement in the import wizard and try again:
+
+android-support-v4.jar => com.android.support:support-v4:18.0.0
+gson-2.2.4.jar => com.google.code.gson:gson:2.2.4
+
+Potentially Missing Dependency:
+-------------------------------
+When we replaced the following .jar files with a Gradle dependency, we
+inferred the dependency version number from the filename. This
+specific version may not actually be available from the repository.
+If you get a build error stating that the dependency is missing, edit
+the version number to for example "+" to pick up the latest version
+instead. (This may require you to update your code if the library APIs
+have changed.)
+
+gson-2.2.4.jar => version 2.2.4 in com.google.code.gson:gson:2.2.4
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+In TVMetroMainActivity:
+* AndroidManifest.xml => tVMetroMainActivity/src/main/AndroidManifest.xml
+* assets/ => tVMetroMainActivity/src/main/assets
+* lint.xml => tVMetroMainActivity/lint.xml
+* res/ => tVMetroMainActivity/src/main/res/
+* src/ => tVMetroMainActivity/src/main/java/
+In TVAppMainActivity:
+* AndroidManifest.xml => tVAppMainActivity/src/main/AndroidManifest.xml
+* assets/ => tVAppMainActivity/src/main/assets
+* res/ => tVAppMainActivity/src/main/res/
+* src/ => tVAppMainActivity/src/main/java/
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)
