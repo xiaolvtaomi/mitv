@@ -18,7 +18,7 @@
     <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
         android:name="com.app.MyApplication"
@@ -140,14 +140,7 @@
                     android:scheme="micontent" />
             </intent-filter>
         </activity>
-
-
-        <activity android:name="com.tv.ui.metro.LoginStep1Activity">
-        </activity>
-        <activity android:name="com.tv.ui.metro.LoginStep2Activity">
-        </activity>
-
-
+        <activity android:name=".LoginStep2Activity"></activity>
 
         <provider
             android:name=".idata.iDataProvider"
@@ -161,6 +154,7 @@
         <activity android:name=".galleryviewpager.Gallery2" />
         <activity android:name=".view.Detail_picture" />
         <activity android:name=".custom.CustomDialog" />
+        <activity android:name=".LoginStep1Activity"></activity>
     </application>
 
 </manifest>
