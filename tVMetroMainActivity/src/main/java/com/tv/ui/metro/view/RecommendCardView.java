@@ -51,6 +51,7 @@ public class RecommendCardView extends RelativeLayout implements ActiveInfoLisen
 	public ImageView mOperationView;
 	public TextView mBannerTextView;
 	public TextView mLabelTextView;
+	public TextView pingdingshan_tv;
 	public TextView notice_textview;
 	View view;
 	public TextView notice_textview_content;
@@ -78,6 +79,9 @@ public class RecommendCardView extends RelativeLayout implements ActiveInfoLisen
 		if (!showBannerText) {
 			mLabelTextView.setText(mItem.name);
 			mLabelTextView.setVisibility(VISIBLE);
+		}else{
+			pingdingshan_tv.setText(mItem.name);
+			pingdingshan_tv.setVisibility(VISIBLE);
 		}
 		bindImageLayer(mItem.images.icon(), mIconView);
 		//bindImageLayer(mItem.images.text(), mSubView);
@@ -352,6 +356,7 @@ public class RecommendCardView extends RelativeLayout implements ActiveInfoLisen
 		mOperationView = (ImageView) view.findViewById(R.id.handler_image_view);
 		mBannerTextView = (TextView) view.findViewById(R.id.recommend_textview);
 		mLabelTextView = (TextView) view.findViewById(R.id.labelTextView);
+		pingdingshan_tv = (TextView) view.findViewById(R.id.pingdingshan_tv);
 		notice_textview=(TextView) view.findViewById(R.id.notice_textview);
 
 		icon_imageview=(CenterIconImage) view.findViewById(R.id.icon_imageview);

@@ -19,6 +19,21 @@
 
         />
 
+    <TextView
+        android:id="@+id/pingdingshan_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="2"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginTop="24dp"
+        android:textColor="#ffffff"
+        android:textSize="24sp"
+        android:visibility="gone"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        />
+
     <com.tv.ui.metro.view.CenterIconImage
         android:id="@+id/front_ground_imageview"
         android:layout_width="wrap_content"

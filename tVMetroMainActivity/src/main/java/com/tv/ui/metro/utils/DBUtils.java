@@ -47,60 +47,60 @@ public class DBUtils {
     static {
         uis[0] = new DisplayItem.UI();
         uis[0].layout = new DisplayItem.UI.Layout(1,1,1,1);
-        uis[0].type = "metro_cell_banner";
+        uis[0].type = "metro_cell_toptv";
 
         uis[1] = new DisplayItem.UI();
         uis[1].layout = new DisplayItem.UI.Layout(2,1,1,1);
-        uis[1].type = "metro_cell_banner";
+        uis[1].type = "metro_cell_toptv";
 
         uis[2] = new DisplayItem.UI();
         uis[2].layout = new DisplayItem.UI.Layout(5,1,1,1);
-        uis[2].type = "metro_cell_banner";
+        uis[2].type = "metro_cell_toptv";
 
         uis[3] = new DisplayItem.UI();
         uis[3].layout = new DisplayItem.UI.Layout(6,1,1,1);
-        uis[3].type = "metro_cell_banner";
+        uis[3].type = "metro_cell_toptv";
 
         uis[4] = new DisplayItem.UI();
         uis[4].layout = new DisplayItem.UI.Layout(1,2,1,1);
-        uis[4].type = "metro_cell_banner";
+        uis[4].type = "metro_cell_toptv";
 
         uis[5] = new DisplayItem.UI();
         uis[5].layout = new DisplayItem.UI.Layout(2,2,1,1);
-        uis[5].type = "metro_cell_banner";
+        uis[5].type = "metro_cell_toptv";
 
         uis[6] = new DisplayItem.UI();
         uis[6].layout = new DisplayItem.UI.Layout(5,2,1,1);
-        uis[6].type = "metro_cell_banner";
+        uis[6].type = "metro_cell_toptv";
 
         uis[7] = new DisplayItem.UI();
         uis[7].layout = new DisplayItem.UI.Layout(6,2,1,1);
-        uis[7].type = "metro_cell_banner";
+        uis[7].type = "metro_cell_toptv";
 
 
         uis[8] = new DisplayItem.UI();
         uis[8].layout = new DisplayItem.UI.Layout(1,3,1,1);
-        uis[8].type = "metro_cell_banner";
+        uis[8].type = "metro_cell_toptv";
 
         uis[9] = new DisplayItem.UI();
         uis[9].layout = new DisplayItem.UI.Layout(2,3,1,1);
-        uis[9].type = "metro_cell_banner";
+        uis[9].type = "metro_cell_toptv";
 
         uis[10] = new DisplayItem.UI();
         uis[10].layout = new DisplayItem.UI.Layout(3,3,1,1);
-        uis[10].type = "metro_cell_banner";
+        uis[10].type = "metro_cell_toptv";
 
         uis[11] = new DisplayItem.UI();
         uis[11].layout = new DisplayItem.UI.Layout(4,3,1,1);
-        uis[11].type = "metro_cell_banner";
+        uis[11].type = "metro_cell_toptv";
 
         uis[12] = new DisplayItem.UI();
         uis[12].layout = new DisplayItem.UI.Layout(5,3,1,1);
-        uis[12].type = "metro_cell_banner";
+        uis[12].type = "metro_cell_toptv";
 
         uis[13] = new DisplayItem.UI();
         uis[13].layout = new DisplayItem.UI.Layout(6,3,1,1);
-        uis[13].type = "metro_cell_banner";
+        uis[13].type = "metro_cell_toptv";
 
 
 
@@ -123,9 +123,9 @@ public class DBUtils {
         SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase(SQLITEDBPATH, null);
         Cursor cursor = null;
         if( groupid == null || TextUtils.isEmpty(groupid)){
-            cursor = db.rawQuery("select  code,Category, Company,CalledNum, CalledPassword, CallingNum, CallingPassword from t_Directory where Category=?", new String[]{Category});
+            cursor = db.rawQuery("select  code,Category, Company,CalledNum, CalledPassword, CallingNum, CallingPassword,HasChildren from t_Directory where Category=?", new String[]{Category});
         }else{
-            cursor = db.rawQuery("select code,Category, Company,CalledNum, CalledPassword, CallingNum, CallingPassword from t_Directory where ParentCode=?", new String[]{groupid});
+            cursor = db.rawQuery("select code,Category, Company,CalledNum, CalledPassword, CallingNum, CallingPassword,HasChildren from t_Directory where ParentCode=?", new String[]{groupid});
         }
         while (cursor.moveToNext()) {
             PDSBean temp = new PDSBean();
@@ -140,6 +140,8 @@ public class DBUtils {
 
             beans.add(temp);
         }
+        cursor.close();
+        db.close();
         for (int i= 0 ;i<= beans.size()/imgs.length;i++){
             GenericAlbum<DisplayItem> temp = new GenericAlbum<DisplayItem>();
             temp.items = new ArrayList<DisplayItem>();
