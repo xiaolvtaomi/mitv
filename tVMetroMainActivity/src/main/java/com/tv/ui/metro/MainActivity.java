@@ -417,7 +417,7 @@ public class MainActivity extends FragmentActivity implements MainMenuMgr
 
                     }
                 });
-            } else if (panelgroupid != null && panelgroupid.equals("451")) {
+            } else if (panelgroupid != null && panelgroupid.equals("51")) {
                 new Handler().post(new Runnable() {
                     @Override
                     public void run() {
@@ -442,7 +442,7 @@ public class MainActivity extends FragmentActivity implements MainMenuMgr
 
                     }
                 });
-            } else if (panelgroupid != null && panelgroupid.equals("458")) {
+            } else if (panelgroupid != null && panelgroupid.equals("59")) {
                 new Handler().post(new Runnable() {
                     @Override
                     public void run() {
@@ -467,7 +467,7 @@ public class MainActivity extends FragmentActivity implements MainMenuMgr
 
                     }
                 });
-            } else if (panelgroupid != null && panelgroupid.equals("459")) {
+            } else if (panelgroupid != null && panelgroupid.equals("58")) {
                 new Handler().post(new Runnable() {
                     @Override
                     public void run() {
@@ -491,7 +491,7 @@ public class MainActivity extends FragmentActivity implements MainMenuMgr
 
                     }
                 });
-            } else if(panelgroupid != null && panelgroupid.equals("454")){
+            } else if(panelgroupid != null && panelgroupid.equals("55")){
                 new Handler().post(new Runnable() {
                     @Override
                     public void run() {
