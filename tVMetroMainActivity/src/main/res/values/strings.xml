@@ -19,5 +19,10 @@
     <string name="mine_info_account_title">账户信息</string>
     <string name="mine_info_account_summary_none">您还没有登录</string>
     <string name="mine_info_account_summary_format">%.02f米币</string>
+    <string name="login">登录</string>
+    <string name="Username">账号</string>
+    <string name="Password">密码</string>
+    <string name="go">进入</string>
+    <string name="forgot_your_password">忘记密码</string>
 
 </resources>

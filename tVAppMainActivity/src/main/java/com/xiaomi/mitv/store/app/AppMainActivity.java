@@ -1,6 +1,6 @@
 package com.xiaomi.mitv.store.app;
 
-;
+
 import android.content.ComponentName;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -22,6 +22,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.app.MyApplication;
 import com.shelwee.update.UpdateHelper;
+import com.tv.ui.metro.LoginStep1Activity;
 import com.tv.ui.metro.MainActivity;
 import com.tv.ui.metro.custom.CustomDialog;
 import com.tv.ui.metro.galleryviewpager.Gallery2;
@@ -255,10 +256,13 @@ public class AppMainActivity extends MainActivity  {
 							startActivity(intent);
 						}
 						else if (target.type.equals("open_goodsInfo")) {
-							Intent intent = new Intent(getApplicationContext(), Gallery2.class);
-							intent.putExtra("id", target.jump_uri);
-							intent.putExtra("activity_Name", "AppMain");
+//							Intent intent = new Intent(getApplicationContext(), Gallery2.class);
+//							intent.putExtra("id", target.jump_uri);
+//							intent.putExtra("activity_Name", "AppMain");
+//							startActivity(intent);
+							Intent intent = new Intent(getApplicationContext(), LoginStep1Activity.class);
 							startActivity(intent);
+
 						}else if(target.type.equals("open_zhibo")){
 
                         }
