@@ -3,6 +3,7 @@ package com.tv.ui.metro.utils;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.tv.ui.metro.model.DisplayItem;
 import com.tv.ui.metro.model.GenericAlbum;
@@ -12,6 +13,8 @@ import com.tv.ui.metro.model.ImageGroup;
 import com.tv.ui.metro.model.PDSBean;
 import com.tv.ui.metro.model.TopBar;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
@@ -22,7 +25,8 @@ import java.util.ArrayList;
 public class DBUtils {
 
 
-    public static final String SQLITEDBPATH = "file:///android_asset/json/zshy_new.sqlite";
+
+    public static final String SQLITEDBPATH = "/sdcard/zshy_new.sqlite";
 
     public static final String[] imgs = new String[]{
             "http://sinacloud.net/diancai/1.png",
@@ -123,9 +127,9 @@ public class DBUtils {
         SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase(SQLITEDBPATH, null);
         Cursor cursor = null;
         if( groupid == null || TextUtils.isEmpty(groupid)){
-            cursor = db.rawQuery("select  code,Category, Company,CalledNum, CalledPassword, CallingNum, CallingPassword from t_Directory where Category=?", new String[]{Category});
+            cursor = db.rawQuery("select  code,Category, Company,CalledNum, CalledPassword, CallingNum, CallingPassword,HasChildren from t_Directory where Category=?", new String[]{Category});
         }else{
-            cursor = db.rawQuery("select code,Category, Company,CalledNum, CalledPassword, CallingNum, CallingPassword from t_Directory where ParentCode=?", new String[]{groupid});
+            cursor = db.rawQuery("select code,Category, Company,CalledNum, CalledPassword, CallingNum, CallingPassword,HasChildren from t_Directory where ParentCode=?", new String[]{groupid});
         }
         while (cursor.moveToNext()) {
             PDSBean temp = new PDSBean();
