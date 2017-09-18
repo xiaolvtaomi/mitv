@@ -11,8 +11,9 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class LoginStep1Activity extends Activity   {
-   Button button;
-   TextView forgot_your_password;
+    Button button;
+    TextView forgot_your_password;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

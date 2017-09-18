@@ -264,7 +264,7 @@ public class AppMainActivity extends MainActivity  {
 							startActivity(intent);
 
 						}else if(target.type.equals("open_zhibo")){
-
+                            String code = target.jump_uri ; // 直播的code,需要根据code再查账号密码
                         }
 
 

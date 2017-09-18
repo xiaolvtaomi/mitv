@@ -169,6 +169,8 @@ public class DBUtils {
                 temp.target.jump_uri = beans.get(i).getCode();
             }else{
                 temp.type = "open_zhibo";
+                temp.target = new DisplayItem.Target();
+                temp.target.jump_uri = beans.get(i).getCode();
             }
             temp.name = beans.get(i).getCompany();
             temp.id = beans.get(i).getCode();
