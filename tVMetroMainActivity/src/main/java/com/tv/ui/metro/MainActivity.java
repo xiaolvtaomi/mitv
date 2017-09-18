@@ -2,6 +2,7 @@ package com.tv.ui.metro;
 
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -60,6 +61,7 @@ public class MainActivity extends FragmentActivity implements MainMenuMgr
         .LoaderCallbacks<GenericSubjectItem<DisplayItem>> {
     private final static String TAG = "TVMetro-MainActivity";
     protected BaseGsonLoader mLoader;
+    String line;
     TabHost mTabHost;
     TabWidget mTabs;
     ViewPager mViewPager;
@@ -359,14 +361,24 @@ public class MainActivity extends FragmentActivity implements MainMenuMgr
                     public void run() {
                         //this is the code for test
                         mLoadingView.stopLoading(true, false);
-                        //load test code for out of companny
+                        InputStream inputStream = null;
+                        try {
+                            inputStream = getAssets().open("json/home.txt");
+                            int size = inputStream.available();
+                            int len = -1;
+                            byte[] bytes = new byte[size];
+                            inputStream.read(bytes);
+                            inputStream.close();
+                            line = new String(bytes);
+                            Log.d("aa", line); }
+                        catch (IOException e) {
+                            e.printStackTrace(); }
+                        System.out.println(line);
                         Gson gson = new Gson();
                         GenericSubjectItem<DisplayItem> fromJson = gson
-                                .fromJson(Utils.readFile
-                                        ("file:///android_asset/json/home" +
-                                                ".txt"), new
+                                .fromJson(line, new
                                         TypeToken<GenericSubjectItem<DisplayItem>>() {
-                        }.getType());
+                                        }.getType());
                         updateTabsAndMetroUI(fromJson);
                         mTabHost.requestLayout();
                         final View tabView = mTabs.getChildTabViewAt
