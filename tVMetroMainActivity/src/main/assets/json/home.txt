@@ -334,7 +334,7 @@
                         "jump_uri": "http://10.254.203.196:8081/panda/cms/noticeListByMac",
                         "param": "",
                         "subType": "single",
-                        "type": "open_url"
+                        "type": "open_goodsInfo"
                     },
                     "_ui": {
                         "type": "metro_cell_banner",
