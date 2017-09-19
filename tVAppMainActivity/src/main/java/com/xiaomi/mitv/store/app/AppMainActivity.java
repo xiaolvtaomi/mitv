@@ -256,12 +256,12 @@ public class AppMainActivity extends MainActivity  {
 							startActivity(intent);
 						}
 						else if (target.type.equals("open_goodsInfo")) {
-//							Intent intent = new Intent(getApplicationContext(), Gallery2.class);
-//							intent.putExtra("id", target.jump_uri);
-//							intent.putExtra("activity_Name", "AppMain");
-//							startActivity(intent);
-							Intent intent = new Intent(getApplicationContext(), LoginStep1Activity.class);
+							Intent intent = new Intent(getApplicationContext(), Gallery2.class);
+							intent.putExtra("id", target.jump_uri);
+							intent.putExtra("activity_Name", "AppMain");
 							startActivity(intent);
+//							Intent intent = new Intent(getApplicationContext(), LoginStep1Activity.class);
+//							startActivity(intent);
 
 						}else if(target.type.equals("open_zhibo")){
                             String code = target.jump_uri ; // 直播的code,需要根据code再查账号密码
