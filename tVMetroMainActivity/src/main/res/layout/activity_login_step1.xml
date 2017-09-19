@@ -74,7 +74,7 @@
         >
         <Button
             android:id="@+id/bt_go"
-            android:background="#d1d1d1"
+            android:background="#FFCCCC"
             android:layout_width="150dp"
             android:layout_height="50dp"
             android:text="@string/go"
@@ -85,17 +85,6 @@
             >
         </Button>
     </RelativeLayout>
-    <TextView
-        android:id="@+id/forgot_your_password"
-        android:layout_marginTop="5dp"
-        android:layout_gravity="center_horizontal"
-        android:textColor="#9a9a9a"
-        android:textSize="18sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/forgot_your_password"
-        style="@style/focusable"
-        android:clickable="true"
-        />
+
 
 </LinearLayout>
