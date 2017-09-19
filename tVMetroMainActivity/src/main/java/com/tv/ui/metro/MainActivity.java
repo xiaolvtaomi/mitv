@@ -76,6 +76,7 @@ public class MainActivity extends FragmentActivity implements MainMenuMgr
     protected DisplayItem albumItem;
     public String panelgroupid = null;
     private ImageLoader mImageLoader;
+    private String panelgroupids;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +84,10 @@ public class MainActivity extends FragmentActivity implements MainMenuMgr
         setContentView(R.layout.activity_main);
         Bundle bundle = this.getIntent().getExtras();
         //不加bundle非空判断，第一次启动，bundle报空指针
+        panelgroupids=getIntent().getStringExtra("panelgroupid");
+        if (panelgroupids!=null){
+            panelgroupid = panelgroupids;
+        }
         if (bundle != null) {
             panelgroupid = bundle.getString("panelgroupid");
         }
@@ -492,12 +497,56 @@ public class MainActivity extends FragmentActivity implements MainMenuMgr
                     }
                 });
             } else if(panelgroupid != null && panelgroupid.equals("55")){
+                mLoadingView.stopLoading(true, false);
+                startActivity(new Intent(MainActivity.this, LoginStep1Activity.class));
+
+            } else if(panelgroupid != null && panelgroupid.equals("56")){
                 new Handler().post(new Runnable() {
                     @Override
                     public void run() {
                         //this is the code for test
                         mLoadingView.stopLoading(true, false);
-                        startActivity(new Intent(MainActivity.this, LoginStep1Activity.class));
+
+                        GenericSubjectItem<DisplayItem> fromJson = DBUtils
+                                .getDisplayItemsByGroupId("402", null);
+                        updateTabsAndMetroUI(fromJson);
+
+                        updateTabsAndMetroUI(fromJson);
+                        mTabHost.requestLayout();
+                        final View tabView = mTabs.getChildTabViewAt
+                                (mViewPager.getCurrentItem());
+                        tabView.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                tabView.requestFocus();
+                            }
+                        });
+
+                    }
+                });
+            }
+            else if(panelgroupid != null ){
+                new Handler().post(new Runnable() {
+                    @Override
+                    public void run() {
+                        //this is the code for test
+                        mLoadingView.stopLoading(true, false);
+
+                        GenericSubjectItem<DisplayItem> fromJson = DBUtils
+                                .getDisplayItemsByGroupId(panelgroupid, null);
+                        updateTabsAndMetroUI(fromJson);
+
+                        updateTabsAndMetroUI(fromJson);
+                        mTabHost.requestLayout();
+                        final View tabView = mTabs.getChildTabViewAt
+                                (mViewPager.getCurrentItem());
+                        tabView.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                tabView.requestFocus();
+                            }
+                        });
+
                     }
                 });
             }
