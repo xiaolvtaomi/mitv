@@ -77,11 +77,12 @@ public class RecommendCardView extends RelativeLayout implements ActiveInfoLisen
 		showBannerText = UI.METRO_CELL_BANNER.equals(mItem._ui.type);
 
 		if (!showBannerText) {
-			mLabelTextView.setText(mItem.name);
-			mLabelTextView.setVisibility(VISIBLE);
-		}else{
+//			mLabelTextView.setText(mItem.name);
+//			mLabelTextView.setVisibility(VISIBLE);
 			pingdingshan_tv.setText(mItem.name);
 			pingdingshan_tv.setVisibility(VISIBLE);
+		}else{
+
 		}
 		bindImageLayer(mItem.images.icon(), mIconView);
 		//bindImageLayer(mItem.images.text(), mSubView);

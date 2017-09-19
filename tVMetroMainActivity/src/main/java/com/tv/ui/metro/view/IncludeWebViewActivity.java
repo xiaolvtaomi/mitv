@@ -13,6 +13,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
 
+import com.tv.ui.metro.MainActivity;
 import com.tv.ui.metro.R;
 import com.tv.ui.metro.galleryviewpager.Gallery2;
 import com.tv.ui.metro.utils.JavaScriptinterface;
@@ -24,7 +25,6 @@ import java.io.InputStreamReader;
 public class IncludeWebViewActivity extends Activity {
     private WebView wv_webview;
     private String str_site;
-    private  Intent intent;
     private  String activity_Name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,7 +99,8 @@ public class IncludeWebViewActivity extends Activity {
         }
     }
     public class JavaScriptinterface {
-        public   String a;
+        public   String name;
+        public   String goodsid;
         private Context mContext;
         //这个一定要定义，要不在showToast()方法里没办法启动intent
         Activity activity;
@@ -111,9 +112,13 @@ public class IncludeWebViewActivity extends Activity {
         }
 
         /** 与js交互时用到的方法，在js里直接调用的 */
-        public void showToast(String goodsid) {
-            a=goodsid;
-            Toast.makeText(getApplicationContext(),a,Toast.LENGTH_SHORT).show();
+        public void showToast(String names,String goodsids) {
+            name=names;
+            goodsid=goodsids;
+                Intent intent = new Intent();
+                intent.putExtra("panelgroupid",goodsid);
+                intent.setClass(mContext, MainActivity.class);
+                activity.startActivity(intent);
         }
     }
 

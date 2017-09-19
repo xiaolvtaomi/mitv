@@ -120,7 +120,7 @@ public class BoardFragment extends Fragment implements BaseScrollLisener,LoaderM
                         item.focusable
                 );
 
-                if(item.type.equals("news")){
+                if(!TextUtils.isEmpty(item.type)&&item.type.equals("news")){
                     needNetRequest = true ;
                     sb_ids.append(",");
                     sb_ids.append(item.id);
