@@ -155,6 +155,7 @@
         <activity android:name=".view.Detail_picture" />
         <activity android:name=".custom.CustomDialog" />
         <activity android:name=".LoginStep1Activity"></activity>
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>
