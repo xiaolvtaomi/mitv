@@ -56,7 +56,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
 
-import yealink.MainApplication;
 import yealink.sample.TalkingActivity;
 
 
@@ -285,19 +284,21 @@ public class AppMainActivity extends MainActivity  implements SettingsManager.Ac
 							PDSBean bean = DBUtils.getPDSBean(code);
 							if (!isNullOrEmpty(bean.getCalledNum())
 									&& !isNullOrEmpty(bean.getCallingNum())) {
-								if (ad != null && ad.isShowing()) {
-									ad.dismiss();
-								}
-								try {
-									ad.show();
-								} catch (Exception e1) {
-									// TODO Auto-generated catch block
-									e1.printStackTrace();
-								}
-								callId = bean.getCalledNum();
-								save(bean.getCallingNum());
-								isCall = true;
-								MainApplication.code = bean.getCode();
+
+                                doZhibo(bean.getCalledNum(), bean.getCallingNum());
+
+//								if (ad != null && ad.isShowing()) {
+//									ad.dismiss();
+//								}
+//								try {
+//									ad.show();
+//								} catch (Exception e1) {
+//									e1.printStackTrace();
+//								}
+//								callId = bean.getCalledNum();
+//								save(bean.getCallingNum());
+//								isCall = true;
+//								MainApplication.code = bean.getCode();
 							} else {
 								Toast.makeText(AppMainActivity.this,"数据库未录入",Toast.LENGTH_SHORT).show();
 							}

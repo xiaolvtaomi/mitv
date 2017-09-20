@@ -1118,4 +1118,10 @@ public class MainActivity extends FragmentActivity implements MainMenuMgr
         return loadingView;
     }
 
+
+
+    public void doZhibo(String callednum,String callingnum){
+        // 振宇在这里加逻辑,这个方法在MainActivity里调用
+    }
+
 }
