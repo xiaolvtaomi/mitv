@@ -3,7 +3,6 @@ package com.tv.ui.metro.utils;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.text.TextUtils;
-import android.util.Log;
 
 import com.tv.ui.metro.model.DisplayItem;
 import com.tv.ui.metro.model.GenericAlbum;
@@ -13,9 +12,6 @@ import com.tv.ui.metro.model.ImageGroup;
 import com.tv.ui.metro.model.PDSBean;
 import com.tv.ui.metro.model.TopBar;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -110,6 +106,27 @@ public class DBUtils {
 
     }
 
+    public static PDSBean getPDSBean(String code){
+        PDSBean temp = new PDSBean();
+        SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase(SQLITEDBPATH, null);
+        Cursor cursor = null;
+            cursor = db.rawQuery("select  code,Category, Company,CalledNum, CalledPassword, CallingNum, CallingPassword,HasChildren from t_Directory where Code=?", new String[]{code});
+        if (cursor.moveToNext()) {
+
+            temp.setCode(cursor.getString(0));
+            temp.setCategory(cursor.getString(1));
+            temp.setCompany(cursor.getString(2));
+            temp.setCalledNum(cursor.getString(3));
+            temp.setCalledPassword(cursor.getString(4));
+            temp.setCallingNum(cursor.getString(5));
+            temp.setCallingPassword(cursor.getString(6));
+            temp.setHaschild(cursor.getInt(7) == 1);
+        }
+        cursor.close();
+        db.close();
+
+        return temp;
+    }
 
     public static GenericSubjectItem<DisplayItem> getDisplayItemsByGroupId(String groupid, String Category){
         GenericSubjectItem<DisplayItem> data = new GenericSubjectItem
