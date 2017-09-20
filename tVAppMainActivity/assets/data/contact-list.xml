@@ -1,0 +1,11 @@
+<contactList>
+ <contact name="Yealink.Demo1" group="0" >
+  <number type="0" value="117.28.251.50" />
+ </contact>
+ <contact name="Yealink.Demo2" group="0" >
+  <number type="0" value="117.28.251.51" />
+ </contact>
+ <contact name="Yealink.Demo3" group="0" >
+  <number type="0" value="117.28.251.56" />
+ </contact>
+</contactList>

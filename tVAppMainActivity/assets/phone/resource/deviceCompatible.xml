@@ -1,0 +1,8 @@
+<deviceList>
+  <device name="aver" version="">
+	<keyframe_content>external</keyframe_content>
+  </device>
+  <device name="lifesize" version="">
+    <h323_audio_byte_order>g722.1-big-ending=0</h323_audio_byte_order>
+  </device>
+</deviceList>

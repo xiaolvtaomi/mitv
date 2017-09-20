@@ -1,0 +1,30 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" tools:context="com.yealink.sample.MainActivity">
+    <item android:id="@+id/action_more"
+            android:orderInCategory="100"
+            android:title="功能"
+            android:showAsAction="always"
+             >
+        <menu>
+             <item
+                android:id="@+id/action_switch_position"
+                android:title="支持远端和本地图像切换位置" />
+            <item
+                android:id="@+id/action_switch_camera"
+                android:title="前后摄像头切换" />
+            <item
+                android:id="@+id/action_landscape"
+                android:title="横竖屏切换"  />
+            <item
+                android:id="@+id/action_mute"
+                android:title="开启/关闭静音"  />
+            <item
+                android:id="@+id/action_disable_camera"
+                android:title="禁用摄像头"  />
+
+            <item
+                android:id="@+id/action_fullScreen"
+                android:title="全屏切换"  />
+        </menu>
+        </item>
+</menu>
