@@ -1,4 +1,4 @@
-package yealink;
+package com.yealink;
 
 import com.yealink.lib.common.AbstractYealinkApplication;
 

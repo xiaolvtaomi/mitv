@@ -1,12 +1,11 @@
-package yealink.sample;
+package com.yealink.sample;
 
 import android.content.Context;
 import android.content.res.Resources;
 
-import com.tv.ui.metro.sampleapp.R;
+import com.tv.ui.metro.R;
 import com.yealink.lib.common.wrapper.AccountConstant;
 import com.yealink.lib.common.wrapper.CallSession;
-
 
 
 /**

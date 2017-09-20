@@ -1,14 +1,10 @@
 package com.tv.ui.metro;
 
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.HashMap;
-
+import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
@@ -17,6 +13,7 @@ import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -25,25 +22,25 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
 import android.support.v4.view.ViewPager;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewStub;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TabHost;
 import android.widget.TabWidget;
+import android.widget.TextView;
 
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.VolleyHelper;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.tv.ui.metro.httpurl.HttpUrl;
 import com.tv.ui.metro.loader.BaseGsonLoader;
 import com.tv.ui.metro.loader.TabsGsonLoader;
 import com.tv.ui.metro.menu.MainMenuMgr;
@@ -53,12 +50,30 @@ import com.tv.ui.metro.model.ImageGroup;
 import com.tv.ui.metro.model.TopBar;
 import com.tv.ui.metro.utils.DBUtils;
 import com.tv.ui.metro.utils.ViewUtils;
-import com.tv.ui.metro.view.*;
+import com.tv.ui.metro.view.BaseScrollLisener;
+import com.tv.ui.metro.view.BoardFragment;
+import com.tv.ui.metro.view.EmptyLoadingView;
+import com.tv.ui.metro.view.MetroFragment;
+import com.tv.ui.metro.view.TextViewWithTTF;
+import com.tv.ui.metro.view.TitleView;
+import com.yealink.MainApplication;
+import com.yealink.lib.common.wrapper.AccountConstant;
+import com.yealink.lib.common.wrapper.CallParams;
+import com.yealink.lib.common.wrapper.Calllog;
+import com.yealink.lib.common.wrapper.SettingsManager;
+import com.yealink.lib.common.wrapper.SipProfile;
+import com.yealink.sample.TalkingActivity;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 
 public class MainActivity extends FragmentActivity implements MainMenuMgr
         .OnMenuCancelListener, LoaderManager
-        .LoaderCallbacks<GenericSubjectItem<DisplayItem>> {
+        .LoaderCallbacks<GenericSubjectItem<DisplayItem>> ,SettingsManager.AccountStateListener{
     private final static String TAG = "TVMetro-MainActivity";
     protected BaseGsonLoader mLoader;
     String line;
@@ -84,6 +99,8 @@ public class MainActivity extends FragmentActivity implements MainMenuMgr
         setContentView(R.layout.activity_main);
         Bundle bundle = this.getIntent().getExtras();
         //不加bundle非空判断，第一次启动，bundle报空指针
+        SettingsManager.getInstance().registerAccountListener(MainActivity.this);
+        setDialog();
         panelgroupids=getIntent().getStringExtra("panelgroupid");
         if (panelgroupids!=null){
             panelgroupid = panelgroupids;
@@ -1122,6 +1139,133 @@ public class MainActivity extends FragmentActivity implements MainMenuMgr
 
     public void doZhibo(String callednum,String callingnum){
         // 振宇在这里加逻辑,这个方法在MainActivity里调用
+
+        if (ad != null && ad.isShowing()) {
+		ad.dismiss();
+		}
+								try {
+									ad.show();
+								} catch (Exception e1) {
+									e1.printStackTrace();
+								}
+								callId = callednum;
+								save(callingnum);
+								isCall = true;
+								MainApplication.code = callingnum;
+    }
+    private void save(String sipId) {
+        SipProfile sp = SettingsManager.getInstance().getSipProfile(0);
+        sp.userName = sipId;
+        sp.registerName = sipId;
+        sp.password = sipId;
+        sp.server = "42.236.68.190";
+        sp.port = 5237;
+        sp.isEnableOutbound=false;
+        sp.isBFCPEnabled = false;
+        sp.isEnabled = true;
+        sp.transPort = SipProfile.TRANSPORT_TCP;
+        System.out.println("!!!!" + sipId + "!!!" + callId);
+        SettingsManager.getInstance().setSipProfile(0, sp);
+    }
+
+    private static final int MSG_ACCOUNT_CHANGE = 200;
+    private boolean isCall = false;
+    private String callId = "";// 被叫电话
+    private AlertDialog ad;
+    private AlertDialog.Builder builder;
+    private LinearLayout ll_status;
+    private TextView tv_status;
+    protected Handler handler = new Handler() {
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case MSG_ACCOUNT_CHANGE:
+                    setStatus(SettingsManager.getInstance().getSipProfile(0));
+                    break;
+                default:
+                    break;
+            }
+        }
+    };
+    @Override
+    public void onAccountStateChanged(int arg0, int arg1, int arg2) {
+        handler.sendEmptyMessage(MSG_ACCOUNT_CHANGE);
+    }
+
+    private void setStatus(SipProfile sp) {
+        if (sp.state == AccountConstant.STATE_UNKNOWN) {
+            tv_status.setText("未知");
+        } else if (sp.state == AccountConstant.STATE_DISABLED) {
+            tv_status.setText("网络繁忙，请稍后在拨……");
+        } else if (sp.state == AccountConstant.STATE_REGING) {
+            tv_status.setText("正在注册...");
+        } else if (sp.state == AccountConstant.STATE_REGED) {
+            tv_status.setText("已注册");
+
+            if (isCall) {
+                if (ad != null && ad.isShowing()) {
+                    ad.dismiss();
+                }
+                isCall = false;
+                new Handler().postDelayed(new Runnable() {
+
+                    @Override
+                    public void run() {
+                        // TODO Auto-generated method stub
+                        CallParams ps = CallParams.create(callId, 0,
+                                Calllog.PROTOCOL_SIP, false, 0, true, true, null);
+                        Intent it = new Intent(MainActivity.this, TalkingActivity.class);
+                        it.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        it.putExtra(TalkingActivity.EXTRA_CALL_PARAMS, ps);
+                        startActivity(it);
+                    }
+                },1000);
+            }
+
+        } else if (sp.state == AccountConstant.STATE_REG_FAILED) {
+            tv_status.setText("注册失败");
+        } else if (sp.state == AccountConstant.STATE_UNREGING) {
+            tv_status.setText("正在注销...");
+        } else if (sp.state == AccountConstant.STATE_UNREGED) {
+            tv_status.setText("已注销");
+        } else if (sp.state == AccountConstant.STATE_REG_ON_BOOT) {
+            tv_status.setText("启动时注册");
+        }
+    }
+
+    private void setDialog() {
+        // TODO Auto-generated method stub
+        ll_status = (LinearLayout) LayoutInflater.from(this).inflate(R.layout.ad_threetree_status, null);
+        tv_status = (TextView) ll_status.findViewById(R.id.tv_status);
+        builder = new AlertDialog.Builder(this, R.style.Dialog);
+        builder.setView(ll_status);
+        builder.setCancelable(false);
+        builder.setPositiveButton("取消", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                dialog.dismiss();
+                hide();
+                isCall = false;
+            }
+        });
+        ad = builder.create();
+    }
+
+
+    public void hide() {
+        // TODO Auto-generated method stub
+        SipProfile sp = SettingsManager.getInstance().getSipProfile(0);
+        sp.isEnabled = false;
+        SettingsManager.getInstance().setSipProfile(0, sp);
+        isCall = false;
+    }
+    /**
+     * 判断是否为null或空�?
+     *
+     * @param str
+     *            String
+     * @return true or false
+     */
+    public static boolean isNullOrEmpty(String str) {
+        return str == null || str.trim().length() == 0;
     }
 
 }

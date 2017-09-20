@@ -153,14 +153,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="yealink.sample.TalkingActivity"
-            android:configChanges="orientation|screenSize"
-            android:excludeFromRecents="true"
-            android:exported="true"
-            android:screenOrientation="sensor"
-            android:theme="@style/AppTheme"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+
     </application>
 
 </manifest>

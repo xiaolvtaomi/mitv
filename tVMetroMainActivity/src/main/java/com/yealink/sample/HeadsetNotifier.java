@@ -1,4 +1,4 @@
-package yealink.sample;
+package com.yealink.sample;
 
 
 import android.util.Log;

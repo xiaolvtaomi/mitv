@@ -1,4 +1,4 @@
-package yealink.view;
+package com.yealink.view;
 
 import android.content.Context;
 import android.util.AttributeSet;

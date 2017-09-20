@@ -12,10 +12,11 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+
+import com.tv.ui.metro.R;
+
 import java.util.ArrayList;
 import java.util.List;
-import com.tv.ui.metro.R;
-import com.tv.ui.metro.model.Image;
 
 
 public class Carousel extends FrameLayout {
@@ -90,7 +91,7 @@ public class Carousel extends FrameLayout {
         mVP.setAdapter(new TopPagerAdapter());
         mVP .setFocusable(false);
         mVP.setCurrentItem(currentItem);
-        mVP.addOnPageChangeListener(new TopOnPageChangeListener());
+        mVP.setOnPageChangeListener(new TopOnPageChangeListener());
         startCarousel();
     }
 

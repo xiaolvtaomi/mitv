@@ -1,4 +1,4 @@
-package yealink;
+package com.yealink;
 
 import android.app.Service;
 import android.bluetooth.BluetoothHeadset;
@@ -17,10 +17,9 @@ import com.yealink.lib.common.wrapper.CalllogManager;
 import com.yealink.lib.common.wrapper.NativeInit;
 import com.yealink.lib.common.wrapper.SettingsManager;
 import com.yealink.lib.debug.DebugLog;
-
-import yealink.sample.BluetoothNotifier;
-import yealink.sample.HeadsetNotifier;
-import yealink.sample.TalkingActivity;
+import com.yealink.sample.BluetoothNotifier;
+import com.yealink.sample.HeadsetNotifier;
+import com.yealink.sample.TalkingActivity;
 
 
 /**

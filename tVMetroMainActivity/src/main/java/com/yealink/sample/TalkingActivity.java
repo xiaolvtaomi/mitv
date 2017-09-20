@@ -1,12 +1,10 @@
-package yealink.sample;
+package com.yealink.sample;
 
 import android.app.Activity;
 import android.bluetooth.BluetoothHeadset;
 import android.content.Context;
 import android.media.AudioManager;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,14 +15,16 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.tv.ui.metro.sampleapp.R;
+import com.tv.ui.metro.R;
+import com.yealink.MainApplication;
 import com.yealink.lib.common.wrapper.CallManager;
 import com.yealink.lib.common.wrapper.CallParams;
 import com.yealink.lib.common.wrapper.CallSession;
+import com.yealink.lib.common.wrapper.SettingsManager;
+import com.yealink.lib.common.wrapper.SipProfile;
 import com.yealink.lib.debug.DebugLog;
-
-import yealink.view.LocalVideoView;
-import yealink.view.RemoteVideoView;
+import com.yealink.view.LocalVideoView;
+import com.yealink.view.RemoteVideoView;
 
 
 /**
@@ -59,12 +59,6 @@ public class TalkingActivity extends Activity implements View.OnClickListener, B
 
         @Override
         public void onIncomingCall(CallSession session) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-                if (isFinishing()) {
-                    DebugLog.e(TAG, "onIncomingCall when activity is shuting down");
-                    return;
-                }
-            }
             mCallId = session.getId();
         };
 
@@ -74,6 +68,7 @@ public class TalkingActivity extends Activity implements View.OnClickListener, B
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
+
                     Log.i(TAG, "onCallEstablished");
                     Toast.makeText(TalkingActivity.this, "已建立通话！", Toast.LENGTH_LONG).show();
                     mCallId = session.getId();
@@ -107,6 +102,11 @@ public class TalkingActivity extends Activity implements View.OnClickListener, B
                         duration = session.establishTimeMills == 0 ? 0 : duration;
                         mErrorCodeUtil.setHangupType(CallErrorCodeUtil.TYPE_BY_ME);
                         mErrorCodeUtil.setDuration(duration);
+                    }
+                    if (!MainApplication.code.equals("")) {
+                        SipProfile sp = SettingsManager.getInstance().getSipProfile(0);
+                        sp.isEnabled = false;
+                        SettingsManager.getInstance().setSipProfile(0, sp);
                     }
                     Toast.makeText(TalkingActivity.this, mErrorCodeUtil.getString(), Toast.LENGTH_LONG).show();
                     TalkingActivity.this.finish();
@@ -149,7 +149,7 @@ public class TalkingActivity extends Activity implements View.OnClickListener, B
     };
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_talking);
         mSmallVideoContainer = (FrameLayout) findViewById(R.id.local_video_container);
@@ -202,28 +202,28 @@ public class TalkingActivity extends Activity implements View.OnClickListener, B
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (mIsEstablished) {
-            switch (item.getItemId()) {
-                case R.id.action_switch_position:
-                    onClickSmallVideo();
-                    break;
-                case R.id.action_switch_camera:
-                    CallManager.getInstance().switchCamera();
-                    break;
-                case R.id.action_mute:
-                    onClickMute();
-                    break;
-                case R.id.action_disable_camera:
-                    onClickStopVideo();
-                    break;
-                case R.id.action_fullScreen:
-                    if (mSmallVideoContainer.getVisibility() == View.VISIBLE) {
-                        mSmallVideoContainer.setVisibility(View.INVISIBLE);
-                        mHangupBtn.setVisibility(View.INVISIBLE);
-                    } else {
-                        mSmallVideoContainer.setVisibility(View.VISIBLE);
-                        mHangupBtn.setVisibility(View.VISIBLE);
-                    }
-                    break;
+            int i = item.getItemId();
+            if (i == R.id.action_switch_position) {
+                onClickSmallVideo();
+
+            } else if (i == R.id.action_switch_camera) {
+                CallManager.getInstance().switchCamera();
+
+            } else if (i == R.id.action_mute) {
+                onClickMute();
+
+            } else if (i == R.id.action_disable_camera) {
+                onClickStopVideo();
+
+            } else if (i == R.id.action_fullScreen) {
+                if (mSmallVideoContainer.getVisibility() == View.VISIBLE) {
+                    mSmallVideoContainer.setVisibility(View.INVISIBLE);
+                    mHangupBtn.setVisibility(View.INVISIBLE);
+                } else {
+                    mSmallVideoContainer.setVisibility(View.VISIBLE);
+                    mHangupBtn.setVisibility(View.VISIBLE);
+                }
+
             }
         }
 
@@ -262,13 +262,13 @@ public class TalkingActivity extends Activity implements View.OnClickListener, B
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.hangup:
-                CallManager.getInstance().hangUp(mCallId);
-                break;
-            case R.id.pickup:
-                CallManager.getInstance().answer(mCallId);
-                break;
+        int i = v.getId();
+        if (i == R.id.hangup) {
+            CallManager.getInstance().hangUp(mCallId);
+
+        } else if (i == R.id.pickup) {
+            CallManager.getInstance().answer(mCallId);
+
         }
     }
 

@@ -156,6 +156,15 @@
         <activity android:name=".custom.CustomDialog" />
         <activity android:name=".LoginStep1Activity"></activity>
         <activity android:name=".MainActivity"></activity>
+
+        <activity
+            android:name="com.yealink.sample.TalkingActivity"
+            android:configChanges="orientation|screenSize"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:screenOrientation="sensor"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
     </application>
 
 </manifest>

@@ -1,7 +1,6 @@
 package com.xiaomi.mitv.store.app;
 
 
-import android.app.AlertDialog;
 import android.content.ComponentName;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -12,14 +11,9 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
-import android.os.Handler;
-import android.os.Message;
 import android.util.Log;
 import android.view.KeyEvent;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -35,17 +29,12 @@ import com.tv.ui.metro.model.DisplayItem;
 import com.tv.ui.metro.model.PDSBean;
 import com.tv.ui.metro.model.Returned;
 import com.tv.ui.metro.model.Updatainfo;
-import com.tv.ui.metro.sampleapp.R;
 import com.tv.ui.metro.utils.DBUtils;
 import com.tv.ui.metro.view.IncludeWebViewActivity;
 import com.tv.ui.metro.view.RecommendCardView;
 import com.tv.ui.metro.view.RecommendCardViewClickListenerFactory;
 import com.tv.ui.metro.view.VitamioActivity;
-import com.yealink.lib.common.wrapper.AccountConstant;
-import com.yealink.lib.common.wrapper.CallParams;
-import com.yealink.lib.common.wrapper.Calllog;
 import com.yealink.lib.common.wrapper.SettingsManager;
-import com.yealink.lib.common.wrapper.SipProfile;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -55,8 +44,6 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
-
-import yealink.sample.TalkingActivity;
 
 
 public class AppMainActivity extends MainActivity  implements SettingsManager.AccountStateListener{
@@ -506,120 +493,5 @@ public class AppMainActivity extends MainActivity  implements SettingsManager.Ac
 
         return installed;
 }
-
-	private void save(String sipId) {
-		SipProfile sp = SettingsManager.getInstance().getSipProfile(0);
-		sp.userName = sipId;
-		sp.registerName = sipId;
-		sp.password = sipId;
-		sp.server = "42.236.68.190";
-		sp.port = 5237;
-		sp.isEnableOutbound=false;
-		sp.isBFCPEnabled = false;
-		sp.isEnabled = true;
-		sp.transPort = SipProfile.TRANSPORT_TCP;
-		System.out.println("!!!!" + sipId + "!!!" + callId);
-		SettingsManager.getInstance().setSipProfile(0, sp);
-	}
-
-	private static final int MSG_ACCOUNT_CHANGE = 200;
-	private boolean isCall = false;
-	private String callId = "";// 被叫电话
-	private AlertDialog ad;
-	private AlertDialog.Builder builder;
-	private LinearLayout ll_status;
-	private TextView tv_status;
-	protected Handler handler = new Handler() {
-		public void handleMessage(Message msg) {
-			switch (msg.what) {
-				case MSG_ACCOUNT_CHANGE:
-					setStatus(SettingsManager.getInstance().getSipProfile(0));
-					break;
-				default:
-					break;
-			}
-		}
-	};
-	@Override
-	public void onAccountStateChanged(int arg0, int arg1, int arg2) {
-		handler.sendEmptyMessage(MSG_ACCOUNT_CHANGE);
-	}
-
-	private void setStatus(SipProfile sp) {
-		if (sp.state == AccountConstant.STATE_UNKNOWN) {
-			tv_status.setText("未知");
-		} else if (sp.state == AccountConstant.STATE_DISABLED) {
-			tv_status.setText("网络繁忙，请稍后在拨……");
-		} else if (sp.state == AccountConstant.STATE_REGING) {
-			tv_status.setText("正在注册...");
-		} else if (sp.state == AccountConstant.STATE_REGED) {
-			tv_status.setText("已注册");
-
-			if (isCall) {
-				if (ad != null && ad.isShowing()) {
-					ad.dismiss();
-				}
-				isCall = false;
-				new Handler().postDelayed(new Runnable() {
-
-					@Override
-					public void run() {
-						// TODO Auto-generated method stub
-						CallParams ps = CallParams.create(callId, 0,
-								Calllog.PROTOCOL_SIP, false, 0, true, true, null);
-						Intent it = new Intent(AppMainActivity.this, TalkingActivity.class);
-						it.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-						it.putExtra(TalkingActivity.EXTRA_CALL_PARAMS, ps);
-						startActivity(it);
-					}
-				},1000);
-			}
-
-		} else if (sp.state == AccountConstant.STATE_REG_FAILED) {
-			tv_status.setText("注册失败");
-		} else if (sp.state == AccountConstant.STATE_UNREGING) {
-			tv_status.setText("正在注销...");
-		} else if (sp.state == AccountConstant.STATE_UNREGED) {
-			tv_status.setText("已注销");
-		} else if (sp.state == AccountConstant.STATE_REG_ON_BOOT) {
-			tv_status.setText("启动时注册");
-		}
-	}
-
-	private void setDialog() {
-		// TODO Auto-generated method stub
-		ll_status = (LinearLayout) LayoutInflater.from(this).inflate(R.layout.ad_threetree_status, null);
-		tv_status = (TextView) ll_status.findViewById(R.id.tv_status);
-		builder = new AlertDialog.Builder(this, R.style.Base_Theme_AppCompat_Dialog);
-		builder.setView(ll_status);
-		builder.setCancelable(false);
-		builder.setPositiveButton("取消", new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface dialog, int whichButton) {
-				dialog.dismiss();
-				hide();
-				isCall = false;
-			}
-		});
-		ad = builder.create();
-	}
-
-
-	public void hide() {
-		// TODO Auto-generated method stub
-		SipProfile sp = SettingsManager.getInstance().getSipProfile(0);
-		sp.isEnabled = false;
-		SettingsManager.getInstance().setSipProfile(0, sp);
-		isCall = false;
-	}
-	/**
-	 * 判断是否为null或空�?
-	 *
-	 * @param str
-	 *            String
-	 * @return true or false
-	 */
-	public static boolean isNullOrEmpty(String str) {
-		return str == null || str.trim().length() == 0;
-	}
 
 }
