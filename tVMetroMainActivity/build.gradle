@@ -8,6 +8,11 @@ android {
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 16
+
+//        ndk {
+//            //选择要添加的对应CPU类型的so
+//            abiFilters 'armeabi-v7a'
+//        }
     }
 
     buildTypes {
@@ -16,11 +21,20 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
+
+    sourceSets {
+        main {
+            assets.srcDirs = ['assets']
+            jniLibs.srcDirs = ['lisbs']
+        }
+    }
 }
 
 dependencies {
-  //  compile 'com.android.support:support-v4:18.0.0'
+    //  compile 'com.android.support:support-v4:18.0.0'
     compile 'com.google.code.gson:gson:2.2.4'
     compile 'com.android.support:support-v4:22.2.0'
-  //  compile project(':vitamio')
+    //  compile project(':vitamio')
+    compile files('lisbs/yealinklib.jar')
+    compile files('lisbs/yealinkservice.jar')
 }

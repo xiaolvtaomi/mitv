@@ -11,10 +11,6 @@ android {
         versionCode 9
         versionName "1.2"
 
-        ndk {
-            //选择要添加的对应CPU类型的so
-            abiFilters 'armeabi-v7a'
-        }
     }
 
     buildTypes {
@@ -24,19 +20,11 @@ android {
         }
     }
 
-    sourceSets {
-        main {
-            assets.srcDirs = ['assets']
-            jniLibs.srcDirs = ['libs']
-        }
-    }
+
 }
 
 dependencies {
     compile project(':tVMetroMainActivity')
     compile 'com.android.support:support-v4:18.0.0'
-
-    compile files('lisbs/yealinklib.jar')
-    compile files('lisbs/yealinkservice.jar')
 
 }
