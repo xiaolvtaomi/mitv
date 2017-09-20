@@ -34,7 +34,6 @@ import com.tv.ui.metro.view.IncludeWebViewActivity;
 import com.tv.ui.metro.view.RecommendCardView;
 import com.tv.ui.metro.view.RecommendCardViewClickListenerFactory;
 import com.tv.ui.metro.view.VitamioActivity;
-import com.yealink.lib.common.wrapper.SettingsManager;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -46,7 +45,7 @@ import java.net.URL;
 import java.util.List;
 
 
-public class AppMainActivity extends MainActivity  implements SettingsManager.AccountStateListener{
+public class AppMainActivity extends MainActivity {
 	private static final String TAG = AppMainActivity.class.getName();
 	File file;
 	DisplayItem.Target target;
@@ -65,7 +64,6 @@ public class AppMainActivity extends MainActivity  implements SettingsManager.Ac
         if (bundle!=null) {
             isFromRoot = bundle.getBoolean("isFromRoot");
         }
-		SettingsManager.getInstance().registerAccountListener(AppMainActivity.this);
 		RecommendCardViewClickListenerFactory.getInstance().setFactory(new RecommendCardViewClickListenerFactory.ClickCreatorFactory() {
 			@Override
 			public View.OnClickListener getRecommendCardViewClickListener() {
