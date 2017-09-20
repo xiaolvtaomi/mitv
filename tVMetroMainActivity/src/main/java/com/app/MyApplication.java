@@ -10,6 +10,7 @@ import com.android.volley.toolbox.Volley;
  */
 public class MyApplication extends Application {
     private static RequestQueue mQueue;
+    // ceshi
     @Override
     public void onCreate() {
         super.onCreate();
