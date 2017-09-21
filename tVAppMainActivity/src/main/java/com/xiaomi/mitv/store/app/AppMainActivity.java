@@ -253,11 +253,16 @@ public class AppMainActivity extends MainActivity {
                             intent.putExtra("item", item);
                             intent.putExtra("isFromRoot", true);
                             startActivity(intent);
-                        } else if (target.type.equals("open_goodsGroup")) {
+                        } else if (target.type.equals("open_goodsGroup")&& target.jump_uri.equals("1")) {
                             Intent intent = new Intent(getApplicationContext(), IncludeWebViewActivity.class);
-                            intent.putExtra("site", "file:///android_asset/index1.html");
+                            intent.putExtra("site", "http://sinacloud.net/diancai/index1.html");
                             startActivity(intent);
-                        } else if (target.type.equals("open_goodsInfo")) {
+                        }
+                        else if (target.type.equals("open_goodsGroup")&& target.jump_uri.equals("2")) {
+                            Intent intent = new Intent(getApplicationContext(), IncludeWebViewActivity.class);
+                            intent.putExtra("site", "http://42.236.68.190:8090/zshy_web/zshy/help.html");
+                            startActivity(intent);
+                        }else if (target.type.equals("open_goodsInfo")&& target.jump_uri.equals("1")) {
                             Intent intent = new Intent(getApplicationContext(), Gallery2.class);
                             intent.putExtra("id", target.jump_uri);
                             intent.putExtra("activity_Name", "AppMain");
