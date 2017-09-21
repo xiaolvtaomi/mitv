@@ -2,7 +2,7 @@
     "code": "000",
     "update_time": 1505355480898,
     "topbar": {
-        "logo": "http://10.254.203.196:8081/panda/cms/images/2017/09/20/1505875966012cea89550-f456-4a57-a2d6-a990eebc9346.png",
+        "logo": "http://sinacloud.net/diancai/1505875966012cea89550-f456-4a57-a2d6-a990eebc9346.png",
         "title": "平顶山党群服务",
         "bg": "",
         "welcomebg": ""
@@ -44,7 +44,7 @@
                         },
                         "back": {
                             "ani": {},
-                            "url": "http://10.254.203.196:8081/panda/cms/images/2017/09/12/150518111936372e84d72-b313-4cea-8538-a52a1f074e21.png",
+                            "url": "http://sinacloud.net/diancai/150518111936372e84d72-b313-4cea-8538-a52a1f074e21.png",
                             "pos": {}
                         },
                         "spirit": {
@@ -89,7 +89,7 @@
                         },
                         "back": {
                             "ani": {},
-                            "url": "http://10.254.203.196:8081/panda/cms/images/2017/09/12/150518132071980618510-6377-468a-8c7b-59ca87ef61ab.png",
+                            "url": "http://sinacloud.net/diancai/150518132071980618510-6377-468a-8c7b-59ca87ef61ab.png",
                             "pos": {}
                         },
                         "spirit": {
@@ -134,7 +134,7 @@
                         },
                         "back": {
                             "ani": {},
-                            "url": "http://10.254.203.196:8081/panda/cms/images/2017/09/12/1505181351180edd5d15f-3c67-4885-9ff5-9ce6ff09f00f.png",
+                            "url": "http://sinacloud.net/diancai/1505181351180edd5d15f-3c67-4885-9ff5-9ce6ff09f00f.png",
                             "pos": {}
                         },
                         "spirit": {
@@ -179,7 +179,7 @@
                         },
                         "back": {
                             "ani": {},
-                            "url": "http://10.254.203.196:8081/panda/cms/images/2017/09/12/1505181182972d713f76f-2466-4eff-9e4d-c4b3e3e20115.png",
+                            "url": "http://sinacloud.net/diancai/1505181182972d713f76f-2466-4eff-9e4d-c4b3e3e20115.png",
                             "pos": {}
                         },
                         "spirit": {
@@ -224,7 +224,7 @@
                         },
                         "back": {
                             "ani": {},
-                            "url": "http://10.254.203.196:8081/panda/cms/images/2017/09/12/1505181386210622e896b-cc3e-4e87-b289-85d03fd6e3e6.png",
+                            "url": "http://sinacloud.net/diancai/1505181386210622e896b-cc3e-4e87-b289-85d03fd6e3e6.png",
                             "pos": {}
                         },
                         "spirit": {
@@ -269,7 +269,7 @@
                         },
                         "back": {
                             "ani": {},
-                            "url": "http://10.254.203.196:8081/panda/cms/images/2017/09/12/1505181232419dfeb9fb0-0eff-411c-83b9-991c0cf43b9c.png",
+                            "url": "http://sinacloud.net/diancai/1505181232419dfeb9fb0-0eff-411c-83b9-991c0cf43b9c.png",
                             "pos": {}
                         },
                         "spirit": {
@@ -314,7 +314,7 @@
                         },
                         "back": {
                             "ani": {},
-                            "url": "http://10.254.203.196:8081/panda/cms/images/2017/09/12/1505181424677dce55d39-5257-4bd0-8f8e-86c9831ed3ce.png",
+                            "url": "http://sinacloud.net/diancai/1505181424677dce55d39-5257-4bd0-8f8e-86c9831ed3ce.png",
                             "pos": {}
                         },
                         "spirit": {
@@ -359,7 +359,7 @@
                         },
                         "back": {
                             "ani": {},
-                            "url": "http://10.254.203.196:8081/panda/cms/images/2017/09/12/1505181258381ce5402c5-fd08-413c-9c52-48b9831d8746.png",
+                            "url": "http://sinacloud.net/diancai/1505181258381ce5402c5-fd08-413c-9c52-48b9831d8746.png",
                             "pos": {}
                         },
                         "spirit": {
@@ -404,7 +404,7 @@
                         },
                         "back": {
                             "ani": {},
-                            "url": "http://10.254.203.196:8081/panda/cms/images/2017/09/12/15051812781259abfd38d-d999-462e-9f7a-7611827889a9.png",
+                            "url": "http://sinacloud.net/diancai/15051812781259abfd38d-d999-462e-9f7a-7611827889a9.png",
                             "pos": {}
                         },
                         "spirit": {
@@ -449,7 +449,7 @@
                         },
                         "back": {
                             "ani": {},
-                            "url": "http://10.254.203.196:8081/panda/cms/images/2017/09/12/1505181446787f1b02a22-3e7a-49dd-9690-c46dc61e898b.png",
+                            "url": "http://sinacloud.net/diancai/1505181446787f1b02a22-3e7a-49dd-9690-c46dc61e898b.png",
                             "pos": {}
                         },
                         "spirit": {
