@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.Animation;
@@ -195,5 +196,12 @@ public class LoginStep1Activity extends Activity  implements SettingsManager.Acc
     public static boolean isNullOrEmpty(String str) {
         return str == null || str.trim().length() == 0;
     }
-
+    public boolean onKeyDown(int keyCode, KeyEvent keyEvent) {
+        if (keyCode == keyEvent.KEYCODE_BACK) {
+            Intent intent=new Intent(LoginStep1Activity.this,MainActivity.class);
+            startActivity(intent);
+            this.finish();
+        }
+        return super.onKeyDown(keyCode, keyEvent);
+    }
 }

@@ -3,17 +3,17 @@
     "update_time": 1505288078191,
     "data": [
         {
-            "name": "第一页",
+            "name": "第1页",
             "panelbg": "",
             "wc": 8,
             "hc": 6,
             "items": [
                 {
                     "target": {
-                        "jump_uri": "http://10.254.203.196:8081/panda/cms/noticeListByMac",
+                        "jump_uri": "10001",
                         "param": "",
                         "subType": "single",
-                        "type": "open_url"
+                        "type": "open_group"
                     },
                     "_ui": {
                         "type": "metro_cell_banner",
@@ -55,10 +55,10 @@
                 },
                 {
                     "target": {
-                        "jump_uri": "http://10.254.203.196:8081/panda/cms/noticeListByMac",
+                        "jump_uri": "10002",
                         "param": "",
                         "subType": "single",
-                        "type": "open_url"
+                        "type": "open_group"
                     },
                     "_ui": {
                         "type": "metro_cell_banner",
@@ -100,10 +100,10 @@
                 },
                 {
                     "target": {
-                        "jump_uri": "http://10.254.203.196:8081/panda/cms/noticeListByMac",
+                        "jump_uri": "10003",
                         "param": "",
                         "subType": "single",
-                        "type": "open_url"
+                        "type": "open_group"
                     },
                     "_ui": {
                         "type": "metro_cell_banner",
@@ -145,10 +145,10 @@
                 },
                 {
                     "target": {
-                        "jump_uri": "http://10.254.203.196:8081/panda/cms/noticeListByMac",
+                        "jump_uri": "10004",
                         "param": "",
                         "subType": "single",
-                        "type": "open_url"
+                        "type": "open_group"
                     },
                     "_ui": {
                         "type": "metro_cell_banner",
@@ -190,10 +190,10 @@
                 },
                 {
                     "target": {
-                        "jump_uri": "http://10.254.203.196:8081/panda/cms/noticeListByMac",
+                        "jump_uri": "15000",
                         "param": "",
                         "subType": "single",
-                        "type": "open_url"
+                        "type": "open_group"
                     },
                     "_ui": {
                         "type": "metro_cell_banner",
@@ -235,10 +235,10 @@
                 },
                 {
                     "target": {
-                        "jump_uri": "http://10.254.203.196:8081/panda/cms/noticeListByMac",
+                        "jump_uri": "16000",
                         "param": "",
                         "subType": "single",
-                        "type": "open_url"
+                        "type": "open_group"
                     },
                     "_ui": {
                         "type": "metro_cell_banner",
@@ -280,10 +280,10 @@
                 },
                 {
                     "target": {
-                        "jump_uri": "http://10.254.203.196:8081/panda/cms/noticeListByMac",
+                        "jump_uri": "17000",
                         "param": "",
                         "subType": "single",
-                        "type": "open_url"
+                        "type": "open_group"
                     },
                     "_ui": {
                         "type": "metro_cell_banner",
@@ -325,10 +325,10 @@
                 },
                 {
                     "target": {
-                        "jump_uri": "http://10.254.203.196:8081/panda/cms/noticeListByMac",
+                        "jump_uri": "18000",
                         "param": "",
                         "subType": "single",
-                        "type": "open_url"
+                        "type": "open_group"
                     },
                     "_ui": {
                         "type": "metro_cell_banner",
@@ -377,17 +377,17 @@
             "id": "82"
         },
         {
-            "name": "县级地市",
+            "name": "第2页",
             "panelbg": "",
             "wc": 8,
             "hc": 6,
             "items": [
                 {
                     "target": {
-                        "jump_uri": "http://10.254.203.196:8081/panda/cms/noticeListByMac",
+                        "jump_uri": "19000",
                         "param": "",
                         "subType": "single",
-                        "type": "open_url"
+                        "type": "open_group"
                     },
                     "_ui": {
                         "type": "metro_cell_banner",
@@ -429,10 +429,10 @@
                 },
                 {
                     "target": {
-                        "jump_uri": "http://10.254.203.196:8081/panda/cms/noticeListByMac",
+                        "jump_uri": "20000",
                         "param": "",
                         "subType": "single",
-                        "type": "open_url"
+                        "type": "open_group"
                     },
                     "_ui": {
                         "type": "metro_cell_banner",
@@ -474,10 +474,10 @@
                 },
                 {
                     "target": {
-                        "jump_uri": "http://10.254.203.196:8081/panda/cms/noticeListByMac",
+                        "jump_uri": "100010",
                         "param": "",
                         "subType": "single",
-                        "type": "open_url"
+                        "type": "open_group"
                     },
                     "_ui": {
                         "type": "metro_cell_banner",

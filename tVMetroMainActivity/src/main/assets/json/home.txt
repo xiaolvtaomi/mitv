@@ -2,10 +2,10 @@
     "code": "000",
     "update_time": 1505355480898,
     "topbar": {
-        "logo": "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2961051620,905474745&fm=27&gp=0.jpg",
+        "logo": "http://10.254.203.196:8081/panda/cms/images/2017/09/20/1505875966012cea89550-f456-4a57-a2d6-a990eebc9346.png",
         "title": "平顶山党群服务",
         "bg": "",
-        "welcomebg": "http://img8.zol.com.cn/bbs/upload/18697/18696792.jpg"
+        "welcomebg": ""
     },
     "data": [
         {
@@ -421,10 +421,10 @@
                 },
                 {
                     "target": {
-                        "jump_uri": "http://10.254.203.196:8081/panda/cms/noticeListByMac",
+                        "jump_uri": "61",
                         "param": "",
                         "subType": "single",
-                        "type": "open_url"
+                        "type": "open_group"
                     },
                     "_ui": {
                         "type": "metro_cell_banner",

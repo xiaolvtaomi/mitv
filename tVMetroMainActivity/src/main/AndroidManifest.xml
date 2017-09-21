@@ -28,6 +28,7 @@
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.READ_LOGS" />
 
+
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.usb"/>
     <uses-feature android:name="android.hardware.camera.autofocus" />
@@ -168,6 +169,7 @@
         <activity android:name=".custom.CustomDialog" />
         <activity android:name=".LoginStep1Activity"></activity>
         <activity android:name=".MainActivity"></activity>
+        <service android:name="com.yealink.NotifyService" />
 
         <activity
             android:name="com.yealink.sample.TalkingActivity"

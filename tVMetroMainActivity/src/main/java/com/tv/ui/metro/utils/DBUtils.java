@@ -27,6 +27,10 @@ public class DBUtils {
     public static final String[] imgs = new String[]{
             "http://sinacloud.net/diancai/1.png",
             "http://sinacloud.net/diancai/2.png",
+            "http://sinacloud.net/diancai/1.png",
+            "http://sinacloud.net/diancai/2.png",
+            "http://sinacloud.net/diancai/3.png",
+            "http://sinacloud.net/diancai/4.png",
             "http://sinacloud.net/diancai/3.png",
             "http://sinacloud.net/diancai/4.png",
             "http://sinacloud.net/diancai/5.png",
@@ -42,7 +46,7 @@ public class DBUtils {
 
     };
 
-    public static DisplayItem.UI[] uis = new DisplayItem.UI[15];
+    public static DisplayItem.UI[] uis = new DisplayItem.UI[18];
 
     static {
         uis[0] = new DisplayItem.UI();
@@ -54,53 +58,69 @@ public class DBUtils {
         uis[1].type = "metro_cell_toptv";
 
         uis[2] = new DisplayItem.UI();
-        uis[2].layout = new DisplayItem.UI.Layout(5,1,1,1);
+        uis[2].layout = new DisplayItem.UI.Layout(3,1,1,1);
         uis[2].type = "metro_cell_toptv";
 
         uis[3] = new DisplayItem.UI();
-        uis[3].layout = new DisplayItem.UI.Layout(6,1,1,1);
+        uis[3].layout = new DisplayItem.UI.Layout(4,1,1,1);
         uis[3].type = "metro_cell_toptv";
 
         uis[4] = new DisplayItem.UI();
-        uis[4].layout = new DisplayItem.UI.Layout(1,2,1,1);
+        uis[4].layout = new DisplayItem.UI.Layout(5,1,1,1);
         uis[4].type = "metro_cell_toptv";
 
         uis[5] = new DisplayItem.UI();
-        uis[5].layout = new DisplayItem.UI.Layout(2,2,1,1);
+        uis[5].layout = new DisplayItem.UI.Layout(6,1,1,1);
         uis[5].type = "metro_cell_toptv";
 
         uis[6] = new DisplayItem.UI();
-        uis[6].layout = new DisplayItem.UI.Layout(5,2,1,1);
+        uis[6].layout = new DisplayItem.UI.Layout(1,2,1,1);
         uis[6].type = "metro_cell_toptv";
 
         uis[7] = new DisplayItem.UI();
-        uis[7].layout = new DisplayItem.UI.Layout(6,2,1,1);
+        uis[7].layout = new DisplayItem.UI.Layout(2,2,1,1);
         uis[7].type = "metro_cell_toptv";
 
-
         uis[8] = new DisplayItem.UI();
-        uis[8].layout = new DisplayItem.UI.Layout(1,3,1,1);
+        uis[8].layout = new DisplayItem.UI.Layout(3,2,1,1);
         uis[8].type = "metro_cell_toptv";
 
         uis[9] = new DisplayItem.UI();
-        uis[9].layout = new DisplayItem.UI.Layout(2,3,1,1);
+        uis[9].layout = new DisplayItem.UI.Layout(4,2,1,1);
         uis[9].type = "metro_cell_toptv";
 
         uis[10] = new DisplayItem.UI();
-        uis[10].layout = new DisplayItem.UI.Layout(3,3,1,1);
+        uis[10].layout = new DisplayItem.UI.Layout(5,2,1,1);
         uis[10].type = "metro_cell_toptv";
 
         uis[11] = new DisplayItem.UI();
-        uis[11].layout = new DisplayItem.UI.Layout(4,3,1,1);
+        uis[11].layout = new DisplayItem.UI.Layout(6,2,1,1);
         uis[11].type = "metro_cell_toptv";
 
+
         uis[12] = new DisplayItem.UI();
-        uis[12].layout = new DisplayItem.UI.Layout(5,3,1,1);
+        uis[12].layout = new DisplayItem.UI.Layout(1,3,1,1);
         uis[12].type = "metro_cell_toptv";
 
         uis[13] = new DisplayItem.UI();
-        uis[13].layout = new DisplayItem.UI.Layout(6,3,1,1);
+        uis[13].layout = new DisplayItem.UI.Layout(2,3,1,1);
         uis[13].type = "metro_cell_toptv";
+
+        uis[14] = new DisplayItem.UI();
+        uis[14].layout = new DisplayItem.UI.Layout(3,3,1,1);
+        uis[14].type = "metro_cell_toptv";
+
+        uis[15] = new DisplayItem.UI();
+        uis[15].layout = new DisplayItem.UI.Layout(4,3,1,1);
+        uis[15].type = "metro_cell_toptv";
+
+        uis[16] = new DisplayItem.UI();
+        uis[16].layout = new DisplayItem.UI.Layout(5,3,1,1);
+        uis[16].type = "metro_cell_toptv";
+
+        uis[17] = new DisplayItem.UI();
+        uis[17].layout = new DisplayItem.UI.Layout(6,3,1,1);
+        uis[17].type = "metro_cell_toptv";
 
 
 
@@ -133,7 +153,7 @@ public class DBUtils {
                 <DisplayItem>() ;
 
         data.topbar = new TopBar();
-        data.topbar.logo = "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2961051620,905474745&fm=27&gp=0.jpg";
+        data.topbar.logo = "http://10.254.203.196:8081/panda/cms/images/2017/09/20/1505875966012cea89550-f456-4a57-a2d6-a990eebc9346.png";
         data.topbar.title = "江西赣州";
         data.topbar.bg = "";
         data.topbar.welcomebg = "";
@@ -238,9 +258,6 @@ public class DBUtils {
 
     public static boolean hasChild(PDSBean bean){
         boolean result = true ;
-
-
-
         return result ;
     }
 
