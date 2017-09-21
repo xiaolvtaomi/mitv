@@ -3,7 +3,7 @@
     "update_time": 1505355480898,
     "topbar": {
         "logo": "http://sinacloud.net/diancai/1505875966012cea89550-f456-4a57-a2d6-a990eebc9346.png",
-        "title": "平顶山党群服务",
+        "title": "赣州党群服务",
         "bg": "",
         "welcomebg": ""
     },
@@ -241,7 +241,7 @@
                 },
                 {
                     "target": {
-                        "jump_uri": "http://10.254.203.196:8081/panda/cms/noticeListByMac",
+                        "jump_uri": "1",
                         "param": "",
                         "subType": "single",
                         "type": "open_goodsGroup"
@@ -376,10 +376,10 @@
                 },
                 {
                     "target": {
-                        "jump_uri": "http://10.254.203.196:8081/panda/cms/noticeListByMac",
+                        "jump_uri": "2",
                         "param": "",
                         "subType": "single",
-                        "type": "open_url"
+                        "type": "open_goodsGroup"
                     },
                     "_ui": {
                         "type": "metro_cell_banner",

@@ -395,7 +395,6 @@ public class MainActivity extends FragmentActivity implements MainMenuMgr
                             Log.d("aa", line); }
                         catch (IOException e) {
                             e.printStackTrace(); }
-                        System.out.println(line);
                         Gson gson = new Gson();
                         GenericSubjectItem<DisplayItem> fromJson = gson
                                 .fromJson(line, new
@@ -414,7 +413,7 @@ public class MainActivity extends FragmentActivity implements MainMenuMgr
 
                     }
                 });
-            }  else if (panelgroupid != null && panelgroupid.equals("50")) {
+            } else if (panelgroupid != null && panelgroupid.equals("50")) {
                 new Handler().post(new Runnable() {
                     @Override
                     public void run() {
@@ -433,7 +432,6 @@ public class MainActivity extends FragmentActivity implements MainMenuMgr
                             Log.d("aa", line); }
                         catch (IOException e) {
                             e.printStackTrace(); }
-                        System.out.println(line);
                         Gson gson = new Gson();
                         GenericSubjectItem<DisplayItem> fromJson = gson
                                 .fromJson(line, new TypeToken<GenericSubjectItem<DisplayItem>>() {
@@ -477,7 +475,33 @@ public class MainActivity extends FragmentActivity implements MainMenuMgr
 
                     }
                 });
-            } else if (panelgroupid != null && panelgroupid.equals("59")) {
+            }
+            else if (panelgroupid != null && panelgroupid.equals("61")) {
+                new Handler().post(new Runnable() {
+                    @Override
+                    public void run() {
+                        //this is the code for test
+                        mLoadingView.stopLoading(true, false);
+
+                        GenericSubjectItem<DisplayItem> fromJson = DBUtils
+                                .getDisplayItemsByGroupId(null, "hotline");
+                        updateTabsAndMetroUI(fromJson);
+
+
+                        updateTabsAndMetroUI(fromJson);
+                        mTabHost.requestLayout();
+                        final View tabView = mTabs.getChildTabViewAt
+                                (mViewPager.getCurrentItem());
+                        tabView.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                tabView.requestFocus();
+                            }
+                        });
+
+                    }
+                });
+            }else if (panelgroupid != null && panelgroupid.equals("59")) {
                 new Handler().post(new Runnable() {
                     @Override
                     public void run() {
@@ -526,32 +550,7 @@ public class MainActivity extends FragmentActivity implements MainMenuMgr
 
                     }
                 });
-            }
-            else if (panelgroupid != null && panelgroupid.equals("61")) {
-                new Handler().post(new Runnable() {
-                    @Override
-                    public void run() {
-                        //this is the code for test
-                        mLoadingView.stopLoading(true, false);
-
-                        GenericSubjectItem<DisplayItem> fromJson = DBUtils
-                                .getDisplayItemsByGroupId(null, "hotline");
-                        updateTabsAndMetroUI(fromJson);
-
-                        updateTabsAndMetroUI(fromJson);
-                        mTabHost.requestLayout();
-                        final View tabView = mTabs.getChildTabViewAt
-                                (mViewPager.getCurrentItem());
-                        tabView.post(new Runnable() {
-                            @Override
-                            public void run() {
-                                tabView.requestFocus();
-                            }
-                        });
-
-                    }
-                });
-            }else if(panelgroupid != null && panelgroupid.equals("55")){
+            } else if(panelgroupid != null && panelgroupid.equals("55")){
                 mLoadingView.stopLoading(true, false);
                 startActivity(new Intent(MainActivity.this, LoginStep1Activity.class));
 
@@ -607,7 +606,6 @@ public class MainActivity extends FragmentActivity implements MainMenuMgr
             }
         }
     }
-
     @Override
     public void onLoaderReset(Loader<GenericSubjectItem<DisplayItem>>
                                           tabsLoader) {
@@ -827,6 +825,13 @@ public class MainActivity extends FragmentActivity implements MainMenuMgr
                 fragment.focusMoveToUp();
                 return true;
             }
+//            if (view.getId() == R.id.tv_tab_indicator && mViewPager
+//                    .getCurrentItem() == mViewPager.getChildCount() - 1) {
+//                BaseScrollLisener fragment = (BaseScrollLisener) mTabsAdapter
+//                        .getItem(mViewPager.getCurrentItem());
+//                fragment.focusMoveToUp();
+//                return true;
+//            }
         }
 
         View view = getCurrentFocus();
