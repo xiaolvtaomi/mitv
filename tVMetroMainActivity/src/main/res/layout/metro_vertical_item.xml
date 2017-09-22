@@ -87,7 +87,8 @@
         android:background="@drawable/name_mask"
         android:ellipsize="end"
         android:gravity="center_vertical"
-        android:padding="@dimen/metro_item_padding"
+        android:layout_marginTop="3.5dp"
+        android:textSize="16sp"
         android:singleLine="true"
         android:textColor="#ccffffff" />
     <LinearLayout
