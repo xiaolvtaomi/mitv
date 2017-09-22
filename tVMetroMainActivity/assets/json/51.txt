@@ -38,7 +38,7 @@
                         },
                         "back": {
                             "ani": {},
-                            "url": "http://sinacloud.net/diancai//1505182214873cfd728bf-4655-4498-9007-f76cd3c15c13.png",
+                            "url": "http://sinacloud.net/diancai/1505182214873cfd728bf-4655-4498-9007-f76cd3c15c13.png",
                             "pos": {}
                         },
                         "spirit": {
@@ -83,7 +83,7 @@
                         },
                         "back": {
                             "ani": {},
-                            "url": "http://sinacloud.net/diancai//15051823607699a7dfc72-8e79-409e-8de9-dc865ea2e2fb.png",
+                            "url": "http://sinacloud.net/diancai/15051823607699a7dfc72-8e79-409e-8de9-dc865ea2e2fb.png",
                             "pos": {}
                         },
                         "spirit": {
@@ -128,7 +128,7 @@
                         },
                         "back": {
                             "ani": {},
-                            "url": "http://sinacloud.net/diancai//1505182392626114f3b5d-f516-41f5-a845-c9243ef86ec2.png",
+                            "url": "http://sinacloud.net/diancai/1505182392626114f3b5d-f516-41f5-a845-c9243ef86ec2.png",
                             "pos": {}
                         },
                         "spirit": {
@@ -173,7 +173,7 @@
                         },
                         "back": {
                             "ani": {},
-                            "url": "http://sinacloud.net/diancai//15051824139589a5fcb31-e0e9-49ab-8933-a61ef13bc4d3.png",
+                            "url": "http://sinacloud.net/diancai/15051824139589a5fcb31-e0e9-49ab-8933-a61ef13bc4d3.png",
                             "pos": {}
                         },
                         "spirit": {
@@ -218,7 +218,7 @@
                         },
                         "back": {
                             "ani": {},
-                            "url": "http://sinacloud.net/diancai//1505182446420cb466339-ba24-499b-802c-39cee9e9705c.png",
+                            "url": "http://sinacloud.net/diancai/1505182446420cb466339-ba24-499b-802c-39cee9e9705c.png",
                             "pos": {}
                         },
                         "spirit": {
@@ -263,7 +263,7 @@
                         },
                         "back": {
                             "ani": {},
-                            "url": "http://sinacloud.net/diancai//1505182469101b9825418-2d42-4511-bc5e-da56833e4a76.png",
+                            "url": "http://sinacloud.net/diancai/1505182469101b9825418-2d42-4511-bc5e-da56833e4a76.png",
                             "pos": {}
                         },
                         "spirit": {
@@ -308,7 +308,7 @@
                         },
                         "back": {
                             "ani": {},
-                            "url": "http://sinacloud.net/diancai//1505182492785dcd72091-b5e9-4462-98e0-8ce41af15c7f.png",
+                            "url": "http://sinacloud.net/diancai/1505182492785dcd72091-b5e9-4462-98e0-8ce41af15c7f.png",
                             "pos": {}
                         },
                         "spirit": {
@@ -353,9 +353,10 @@
                         },
                         "back": {
                             "ani": {},
-                            "url": "http://sinacloud.net/diancai//1505182516707548a7077-d9c8-400c-9e8f-7eac86502e9d.png",
+                            "url": "http://sinacloud.net/diancai/1505182516707548a7077-d9c8-400c-9e8f-7eac86502e9d.png",
                             "pos": {}
                         },
+
                         "spirit": {
                             "ani": {},
                             "url": "",
@@ -412,7 +413,7 @@
                         },
                         "back": {
                             "ani": {},
-                            "url": "http://sinacloud.net/diancai//15051825452150194173d-58ad-4aa3-90c5-4d52fb7b67bf.png",
+                            "url": "http://sinacloud.net/diancai/15051825452150194173d-58ad-4aa3-90c5-4d52fb7b67bf.png",
                             "pos": {}
                         },
                         "spirit": {
@@ -457,7 +458,7 @@
                         },
                         "back": {
                             "ani": {},
-                            "url": "http://sinacloud.net/diancai//1505182608829cf8ab679-bd4a-4cb8-82c2-cc6e821dc2b0.png",
+                            "url": "http://sinacloud.net/diancai/1505182608829cf8ab679-bd4a-4cb8-82c2-cc6e821dc2b0.png",
                             "pos": {}
                         },
                         "spirit": {
@@ -502,7 +503,7 @@
                         },
                         "back": {
                             "ani": {},
-                            "url": "http://sinacloud.net/diancai//1505182629209ab491b97-720b-4c7c-ae40-2dc798aa538d.png",
+                            "url": "http://sinacloud.net/diancai/1505182629209ab491b97-720b-4c7c-ae40-2dc798aa538d.png",
                             "pos": {}
                         },
                         "spirit": {
@@ -547,7 +548,7 @@
                         },
                         "back": {
                             "ani": {},
-                            "url": "http://sinacloud.net/diancai//1505182695116a10c4a8a-aac3-4caf-9d45-019a07cc8e74.png",
+                            "url": "http://sinacloud.net/diancai/1505182695116a10c4a8a-aac3-4caf-9d45-019a07cc8e74.png",
                             "pos": {}
                         },
                         "spirit": {
@@ -592,7 +593,7 @@
                         },
                         "back": {
                             "ani": {},
-                            "url": "http://sinacloud.net/diancai//1505182695116a10c4a8a-aac3-4caf-9d45-019a07cc8e74.png",
+                            "url": "http://sinacloud.net/diancai/1505182695116a10c4a8a-aac3-4caf-9d45-019a07cc8e74.png",
                             "pos": {}
                         },
                         "spirit": {
@@ -637,7 +638,7 @@
                         },
                         "back": {
                             "ani": {},
-                            "url": "http://sinacloud.net/diancai//1505182695116a10c4a8a-aac3-4caf-9d45-019a07cc8e74.png",
+                            "url": "http://sinacloud.net/diancai/1505182695116a10c4a8a-aac3-4caf-9d45-019a07cc8e74.png",
                             "pos": {}
                         },
                         "spirit": {
@@ -682,7 +683,7 @@
                         },
                         "back": {
                             "ani": {},
-                            "url": "http://sinacloud.net/diancai//1505182695116a10c4a8a-aac3-4caf-9d45-019a07cc8e74.png",
+                            "url": "http://sinacloud.net/diancai/1505182695116a10c4a8a-aac3-4caf-9d45-019a07cc8e74.png",
                             "pos": {}
                         },
                         "spirit": {
@@ -727,7 +728,7 @@
                         },
                         "back": {
                             "ani": {},
-                            "url": "http://sinacloud.net/diancai//1505182695116a10c4a8a-aac3-4caf-9d45-019a07cc8e74.png",
+                            "url": "http://sinacloud.net/diancai/1505182695116a10c4a8a-aac3-4caf-9d45-019a07cc8e74.png",
                             "pos": {}
                         },
                         "spirit": {
