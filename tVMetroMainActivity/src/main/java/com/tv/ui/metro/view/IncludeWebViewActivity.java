@@ -11,6 +11,7 @@ import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.tv.ui.metro.MainActivity;
@@ -26,6 +27,7 @@ public class IncludeWebViewActivity extends Activity {
     private WebView wv_webview;
     private String str_site;
     private  String activity_Name;
+    private RelativeLayout rootLayout ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +40,7 @@ public class IncludeWebViewActivity extends Activity {
 
     }
     public void initView() {
+        rootLayout = (RelativeLayout) findViewById(R.id.rootLayout);
         wv_webview = (WebView) findViewById(R.id.webView);
         wv_webview.setWebViewClient(new WebViewClient() {
             @Override
@@ -122,4 +125,19 @@ public class IncludeWebViewActivity extends Activity {
         }
     }
 
+
+    @Override
+    protected void onDestroy() {
+
+        if (wv_webview != null) {
+            wv_webview.loadDataWithBaseURL(null, "", "text/html", "utf-8", null);
+            wv_webview.clearHistory();
+
+            rootLayout.removeView(wv_webview);
+            wv_webview.destroy();
+            wv_webview = null;
+        }
+
+        super.onDestroy();
+    }
 }
