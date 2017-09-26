@@ -16,6 +16,8 @@ import com.tv.ui.metro.loader.ActiveInfoGsonLoader;
 import com.tv.ui.metro.model.ActiveInfoRespBean;
 import com.tv.ui.metro.model.DisplayItem;
 import com.tv.ui.metro.model.GenericAlbum;
+import com.tv.ui.metro.utils.ViewUtils;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -235,6 +237,13 @@ public class BoardFragment extends Fragment implements BaseScrollLisener,LoaderM
     }
     @Override
     public void onLoaderReset(Loader<ActiveInfoRespBean> loader) {
+
+    }
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        ViewUtils.unbindDrawables(mBoardLayout);
+
 
     }
 }

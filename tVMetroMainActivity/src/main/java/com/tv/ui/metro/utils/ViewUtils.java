@@ -16,7 +16,7 @@ public final class ViewUtils {
 		}
 		if (view.getBackground() != null) {
 			view.getBackground().setCallback(null);
-			System.gc();
+			//System.gc();
             if(Build.VERSION.SDK_INT >= 16)
 			    view.setBackground(null);
             else
@@ -29,7 +29,7 @@ public final class ViewUtils {
 			if(imageView.getDrawable() != null){
 				imageView.getDrawable().setCallback(null);
 				imageView.setImageDrawable(null);
-				System.gc();
+				//System.gc();
 					}
 				}
 		if (view instanceof ViewGroup) {

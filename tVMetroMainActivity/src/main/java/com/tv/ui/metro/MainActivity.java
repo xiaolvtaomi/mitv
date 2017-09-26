@@ -123,8 +123,9 @@ public class MainActivity extends FragmentActivity implements MainMenuMgr
                 findViewById(R.id.tabs_content));
         setScrollerTime(800);
         albumItem = (DisplayItem) getIntent().getSerializableExtra("item");
-        getSupportLoaderManager().initLoader(TabsGsonLoader.LOADER_ID, null,
-                this);
+//        getSupportLoaderManager().initLoader(TabsGsonLoader.LOADER_ID, null,
+//                this);
+        onLoadFinished(null,null);
         if (savedInstanceState != null) {
             mTabHost.setCurrentTabByTag(savedInstanceState.getString("tab"));
         }
@@ -462,7 +463,6 @@ public class MainActivity extends FragmentActivity implements MainMenuMgr
                         updateTabsAndMetroUI(fromJson);
 
 
-                        updateTabsAndMetroUI(fromJson);
                         mTabHost.requestLayout();
                         final View tabView = mTabs.getChildTabViewAt
                                 (mViewPager.getCurrentItem());
@@ -488,7 +488,6 @@ public class MainActivity extends FragmentActivity implements MainMenuMgr
                         updateTabsAndMetroUI(fromJson);
 
 
-                        updateTabsAndMetroUI(fromJson);
                         mTabHost.requestLayout();
                         final View tabView = mTabs.getChildTabViewAt
                                 (mViewPager.getCurrentItem());
@@ -513,7 +512,6 @@ public class MainActivity extends FragmentActivity implements MainMenuMgr
                         updateTabsAndMetroUI(fromJson);
 
 
-                        updateTabsAndMetroUI(fromJson);
                         mTabHost.requestLayout();
                         final View tabView = mTabs.getChildTabViewAt
                                 (mViewPager.getCurrentItem());
@@ -537,7 +535,6 @@ public class MainActivity extends FragmentActivity implements MainMenuMgr
                                 .getDisplayItemsByGroupId(null, "agriculture");
                         updateTabsAndMetroUI(fromJson);
 
-                        updateTabsAndMetroUI(fromJson);
                         mTabHost.requestLayout();
                         final View tabView = mTabs.getChildTabViewAt
                                 (mViewPager.getCurrentItem());
@@ -565,7 +562,6 @@ public class MainActivity extends FragmentActivity implements MainMenuMgr
                                 .getDisplayItemsByGroupId("402", null);
                         updateTabsAndMetroUI(fromJson);
 
-                        updateTabsAndMetroUI(fromJson);
                         mTabHost.requestLayout();
                         final View tabView = mTabs.getChildTabViewAt
                                 (mViewPager.getCurrentItem());
@@ -590,7 +586,6 @@ public class MainActivity extends FragmentActivity implements MainMenuMgr
                                 .getDisplayItemsByGroupId(panelgroupid, null);
                         updateTabsAndMetroUI(fromJson);
 
-                        updateTabsAndMetroUI(fromJson);
                         mTabHost.requestLayout();
                         final View tabView = mTabs.getChildTabViewAt
                                 (mViewPager.getCurrentItem());
@@ -626,6 +621,7 @@ public class MainActivity extends FragmentActivity implements MainMenuMgr
         }
         mTabs.removeAllViews();
         mViewPager.removeAllViews();
+        System.gc();
         mTabsAdapter = new TabsAdapter(this, mTabHost, mViewPager);
 
         addVideoTestData(content);
@@ -1149,13 +1145,13 @@ public class MainActivity extends FragmentActivity implements MainMenuMgr
                 Resources res = view.getResources();
                 view.setTextColor(res.getColor(android.R.color.white));
                 view.setTypeface(null, Typeface.BOLD);
-                if (_contents.data.get(i).panelbg != null) {
-                    mImageLoader.get(_contents.data.get(i).panelbg,
-                            ImageLoader.getCommonViewImageListener(main_bg, R
-                                    .drawable.main_bg, R.drawable.main_bg));
-                } else {
-                    main_bg.setBackgroundResource(R.drawable.main_bg);
-                }
+//                if (_contents.data.get(i).panelbg != null) {
+//                    mImageLoader.get(_contents.data.get(i).panelbg,
+//                            ImageLoader.getCommonViewImageListener(main_bg, R
+//                                    .drawable.main_bg, R.drawable.main_bg));
+//                } else {
+//                    main_bg.setBackgroundResource(R.drawable.main_bg);
+//                }
             } else {
                 TextViewWithTTF view = (TextViewWithTTF) viewC.findViewById(R.id.tv_tab_indicator);
                 Resources res = view.getResources();
