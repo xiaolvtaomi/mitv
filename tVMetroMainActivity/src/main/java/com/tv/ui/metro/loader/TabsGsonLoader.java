@@ -46,24 +46,30 @@ public class TabsGsonLoader extends BaseGsonLoader<GenericSubjectItem<DisplayIte
         }
 
 
-          if (TextUtils.isEmpty(pannelgroupid)) {
-             String tokenBak = EncrypePreRequest.encrypePreQuest(hm);
-             //  calledURL = HttpUrl.calledurl + HttpUrl.getMacAddress() + "&token=" + tokenBak;
-             // calledURL = HttpUrl.calledurl + HttpUrl.getMacAddress() + "&token=" + tokenBak+"&versionCode=" + getVersionCode();
-
-
-    }
-        else {
-            hm.put("panelgroupid",pannelgroupid);
+        if (TextUtils.isEmpty(pannelgroupid)) {
             String tokenBak = EncrypePreRequest.encrypePreQuest(hm);
-       //       calledURL = HttpUrl.calledurl + HttpUrl.getMacAddress() + "&token=" + tokenBak+ "&panelgroupid="+pannelgroupid;
-       //       calledURL = "file:///android_asset/json";
-        //      calledURL = HttpUrl.calledurl + HttpUrl.getMacAddress() + "&token=" + tokenBak+ "&panelgroupid="+pannelgroupid+"&versionCode=" + getVersionCode();
+            //  calledURL = HttpUrl.calledurl + HttpUrl.getMacAddress() +
+            // "&token=" + tokenBak;
+            // calledURL = HttpUrl.calledurl + HttpUrl.getMacAddress() +
+            // "&token=" + tokenBak+"&versionCode=" + getVersionCode();
 
-          }
+
+        } else {
+            hm.put("panelgroupid", pannelgroupid);
+            String tokenBak = EncrypePreRequest.encrypePreQuest(hm);
+            //       calledURL = HttpUrl.calledurl + HttpUrl.getMacAddress()
+            // + "&token=" + tokenBak+ "&panelgroupid="+pannelgroupid;
+            //       calledURL = "file:///android_asset/json";
+            //      calledURL = HttpUrl.calledurl + HttpUrl.getMacAddress() +
+            // "&token=" + tokenBak+
+            // "&panelgroupid="+pannelgroupid+"&versionCode=" +
+            // getVersionCode();
+
+        }
 //        // 特殊处理
 //        String goodsgroupid = "";
-//        if(item != null && item.target != null && !TextUtils.isEmpty(item.target.type)
+//        if(item != null && item.target != null && !TextUtils.isEmpty(item
+// .target.type)
 //                && "open_group".equals(item.target.type)){
 //            goodsgroupid = item.target.jump_uri ;
 //        }

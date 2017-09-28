@@ -30,6 +30,7 @@ import com.tv.ui.metro.model.PDSBean;
 import com.tv.ui.metro.model.Returned;
 import com.tv.ui.metro.model.Updatainfo;
 import com.tv.ui.metro.utils.DBUtils;
+import com.tv.ui.metro.utils.ToastUtils;
 import com.tv.ui.metro.view.IncludeWebViewActivity;
 import com.tv.ui.metro.view.RecommendCardView;
 import com.tv.ui.metro.view.RecommendCardViewClickListenerFactory;
@@ -155,15 +156,20 @@ public class AppMainActivity extends MainActivity {
 
         @Override
         public void onClick(View v) {
+
             if (RecommendCardView.class.isInstance(v)) {
+
+//                ToastUtils.showToast(AppMainActivity.this, "RecommendCardView isInstance");
                 RecommendCardView rcv = (RecommendCardView) v;
                 DisplayItem item = rcv.getContentData();
-                target = item.target;
-                if (null != item) {
 
+                if (null != item) {
+                    target = item.target;
+//                    ToastUtils.showToast(AppMainActivity.this, "null != item");
                     //  ---------wangzhiwei---------begin------跳转
                     if (null != target) {
 
+//                        ToastUtils.showToast(AppMainActivity.this, "null != target="+target.type+"="+target.jump_uri);
                         if (target.type.equals("open_url") && (!target.jump_uri.endsWith(".mp4"))) {
 //							String params = "";
 //							try {
@@ -254,11 +260,13 @@ public class AppMainActivity extends MainActivity {
                             intent.putExtra("isFromRoot", true);
                             startActivity(intent);
                         } else if (target.type.equals("open_goodsGroup")&& target.jump_uri.equals("1")) {
+                            ToastUtils.showToast(AppMainActivity.this, "乡村");
                             Intent intent = new Intent(getApplicationContext(), IncludeWebViewActivity.class);
                             intent.putExtra("site", "http://sinacloud.net/diancai/index1.html");
                             startActivity(intent);
                         }
                         else if (target.type.equals("open_goodsGroup")&& target.jump_uri.equals("2")) {
+                            ToastUtils.showToast(AppMainActivity.this, "帮助中心");
                             Intent intent = new Intent(getApplicationContext(), IncludeWebViewActivity.class);
                             intent.putExtra("site", "http://42.236.68.190:8090/zshy_web/zshy/help.html");
                             startActivity(intent);
@@ -298,8 +306,14 @@ public class AppMainActivity extends MainActivity {
                         }
 
 
+                    }else{
+//                        ToastUtils.showToast(AppMainActivity.this, "null == target");
                     }
+                }else{
+//                    ToastUtils.showToast(AppMainActivity.this, "null == item");
                 }
+            }else{
+//                ToastUtils.showToast(AppMainActivity.this, "RecommendCardView not isInstance");
             }
         }
 
@@ -457,21 +471,6 @@ public class AppMainActivity extends MainActivity {
     //返回直接进iptv
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
-//		if (     event.getAction() == KeyEvent.ACTION_DOWN
-//				&& event.getKeyCode()==KeyEvent.KEYCODE_BACK
-//				&& model.equals("HUAWEI")
-//                && !isFromRoot){
-//			doStartApplicationWithPackageNames("com.huawei.iptv.stb");
-//			return  true;
-//		}
-        if (event.getAction() == KeyEvent.ACTION_DOWN
-                && event.getKeyCode() == KeyEvent.KEYCODE_BACK
-                && !model.equals("HUAWEI")
-                && !isFromRoot
-                && !model.equals(null)) {
-            doStartApplicationWithPackageNames("com.itv.android.iptv");
-            return true;
-        }
         return super.dispatchKeyEvent(event);
     }
 
