@@ -1182,15 +1182,17 @@ public class MainActivity extends FragmentActivity implements MainMenuMgr
         if (ad != null && ad.isShowing()) {
 		ad.dismiss();
 		}
-								try {
-									ad.show();
-								} catch (Exception e1) {
-									e1.printStackTrace();
-								}
-								callId = callednum;
-								save(callingnum);
-								isCall = true;
-								MainApplication.code = callingnum;
+		try {
+			ad.show();
+
+			} catch (Exception e1) {
+            e1.printStackTrace();
+        }
+        hide();
+		callId = callednum;
+		save(callingnum);
+		isCall = true;
+        MainApplication.code = callingnum;
     }
     private void save(String sipId) {
         SipProfile sp = SettingsManager.getInstance().getSipProfile(0);
