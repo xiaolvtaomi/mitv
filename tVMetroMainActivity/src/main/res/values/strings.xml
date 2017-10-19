@@ -22,6 +22,8 @@
     <string name="login">登录</string>
     <string name="Username">账号</string>
     <string name="Password">密码</string>
+    <string name="MeetingUsername">会议室账号</string>
+    <string name="MeetingPassword">会议室密码</string>
     <string name="go">进入</string>
     <string name="forgot_your_password">忘记密码</string>
     <string name="error_cur_talking">正在通话中...</string>

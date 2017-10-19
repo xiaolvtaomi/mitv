@@ -3,22 +3,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/bg2">
+    android:background="@drawable/bg3">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:id="@+id/new_ll"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="180dp"
         android:gravity="center_horizontal"
         >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="登陆"
-            android:layout_margin="17dp"
-            android:textSize="22sp"
-            android:textStyle="bold"/>
+
     </LinearLayout>
     <LinearLayout
         android:layout_width="300dp"
@@ -48,22 +42,24 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:orientation="horizontal">
+
         <FrameLayout
-            android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
             <EditText
                 android:id="@+id/id_login_et_pwd"
-                android:layout_gravity="center_vertical"
-                android:layout_margin="10dp"
-                android:drawablePadding="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp"
                 android:background="@android:drawable/edit_text"
-                android:textSize="18sp"
+                android:drawablePadding="5dp"
+                android:hint="@string/Password"
                 android:imeOptions="actionSearch"
                 android:inputType="text"
-                android:hint="@string/Password"/>
+                android:textSize="18sp" />
         </FrameLayout>
     </LinearLayout>
     <RelativeLayout
@@ -74,10 +70,10 @@
         >
         <Button
             android:id="@+id/bt_go"
-            android:background="#FFCCCC"
-            android:layout_width="150dp"
+            android:background="@drawable/login_login"
+            android:layout_width="270dp"
             android:layout_height="50dp"
-            android:text="@string/go"
+            android:text="@string/login"
             android:textSize="15sp"
             android:textColor="#9a9a9a"
             style="@style/focusable"
