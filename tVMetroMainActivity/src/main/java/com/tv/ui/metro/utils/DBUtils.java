@@ -128,7 +128,7 @@ public class DBUtils {
 
     public static PDSBean getPDSBean(String code){
         PDSBean temp = new PDSBean();
-        SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase(SQLITEDBPATH, null);
+        SQLiteDatabase db = SQLiteDatabase.openDatabase(SQLITEDBPATH, null,SQLiteDatabase.OPEN_READONLY);
         Cursor cursor = null;
             cursor = db.rawQuery("select  code,Category, Company,CalledNum, CalledPassword, CallingNum, CallingPassword,HasChildren from t_Directory where Code=?", new String[]{code});
         if (cursor.moveToNext()) {
@@ -161,7 +161,7 @@ public class DBUtils {
         data.data = new ArrayList<GenericAlbum<DisplayItem>>();
         ArrayList<PDSBean> beans = new ArrayList<PDSBean>();
 
-        SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase(SQLITEDBPATH, null);
+        SQLiteDatabase db = SQLiteDatabase.openDatabase(SQLITEDBPATH, null,SQLiteDatabase.OPEN_READONLY);
         Cursor cursor = null;
         if( groupid == null || TextUtils.isEmpty(groupid)){
             cursor = db.rawQuery("select  code,Category, Company,CalledNum, CalledPassword, CallingNum, CallingPassword,HasChildren from t_Directory where Category=?", new String[]{Category});
