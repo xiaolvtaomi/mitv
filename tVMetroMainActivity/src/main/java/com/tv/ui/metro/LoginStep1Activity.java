@@ -53,6 +53,8 @@ public class LoginStep1Activity extends Activity  implements SettingsManager.Acc
                         // TODO Auto-generated catch block
                         e1.printStackTrace();
                     }
+                    //登录视频会议的时候  先注销。
+                    hide();
                     save(tv_username.getText().toString(), tv_password.getText().toString());
                     isCall = true;
                     //为空代表是视频会议 挂断后不需要注销
